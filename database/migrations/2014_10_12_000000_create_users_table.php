@@ -15,12 +15,20 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('name');            
+            $table->string('email')->unique();           
+            $table->string('password')->nullable();
+            $table->string('imagen')->default('img/default.jpg');
+            //codigo para identificar al usuario se utiliza en la confirmación
+            $table->string('codigo')->nullable();
+            //se utiliza para saber si el usuario esta activo o no 
+            //0 para activo 1 para inactivo
+            $table->integer('activo')->default(0);
             $table->rememberToken();
             $table->timestamps();
+
+      
+
         });
     }
 
