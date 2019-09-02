@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/respuesta', function(){
     return view('welcome');
 })->name('respuesta');
+
+Route::get('activacion/{codigo}', 'UserController@activate')->name('activate');
+
+Route::post('complete/{id}','UserController@complete')->name('complete');
