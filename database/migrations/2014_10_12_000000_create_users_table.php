@@ -15,10 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');            
+            $table->string('name');   
+            $table->string('lastname');            
             $table->string('email')->unique();           
             $table->string('password')->nullable();
             $table->string('imagen')->default('img/default.jpg');
+            $table->date('fecha')->nullable();
             //codigo para identificar al usuario se utiliza en la confirmación
             $table->string('codigo')->nullable();
             //se utiliza para saber si el usuario esta activo o no 

@@ -62,6 +62,8 @@ function generarCodigo($longitud) {
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],            
+            'fecha'=>['required','date'],    
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
            
         ]);
@@ -77,13 +79,15 @@ function generarCodigo($longitud) {
     {
         $codigo=$this->generarCodigo(8);
 
-        $datos=array('name'=>$data['name'],'codigo'=>$codigo);
+        $datos=array('name'=>$data['name'],'lastname'=>$data['lastname'],'fecha'=>$data['fecha'],'codigo'=>$codigo);
 
         $this->email($datos,$data['email']);
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'lastname'=>$data['lastname'],
+            'fecha'=>$data['fecha'],
             'codigo' =>$codigo,
             
         ]);
