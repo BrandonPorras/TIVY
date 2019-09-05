@@ -31,7 +31,7 @@
                                 @enderror
                         </div>
 
-                        <div class="form-group row d-flex justify-content-around">
+                        <div class="form-group ">
                                 <div class="form-check p-0 m-0">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label" for="remember">
@@ -51,7 +51,9 @@
                                 </button>
                         </div>
                         <div class="form-group d-flex justify-content-center">
-                            <small>{{ __('Dont have an account? Register') }} </small>
+                                
+                            <small><a class="" href="{{ route('register') }}">
+                                {{ __('Dont have an account? Register') }}</a> </small>
                         </div>
                     </form>
                 </div>

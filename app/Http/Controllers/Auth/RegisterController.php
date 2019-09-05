@@ -60,11 +60,15 @@ function generarCodigo($longitud) {
 
     protected function validator(array $data)
     {
+        $fecha_actual = date("d-m-Y");       
+        $fecha= date("Y-m-d",strtotime($fecha_actual."- 18 year"));
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],            
-            'fecha'=>['required','date'],    
+            'fecha'=>['required','date',"before:$fecha"],    
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'termsConditions'=>['required']
            
         ]);
     }

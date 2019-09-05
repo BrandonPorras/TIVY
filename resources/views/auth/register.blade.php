@@ -82,10 +82,15 @@
             
                                     <div class="form-group row d-flex justify-content-around">
                                         <div class="form-check p-0 m-0">
-                                            <input class="form-check-input" type="checkbox" name="termsConditions" id="termsConditions" {{ old('termsConditions') ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="termsConditions">
-                                               <small>{{ __('I accept terms and conditions') }}</small> 
-                                            </label>
+                                            <input type="checkbox" class="form-check-input  @error('termsConditions') is-invalid @enderror "  name="termsConditions" id="termsConditions" value="1">
+                                             <label class="form-check-label" for="termsConditions">                                                
+                                               <small>{{ __('I accept terms and conditions') }}</small>                                              
+                                               @error('termsConditions')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                            </label>                                           
                                         </div>
 
                                 </div>
