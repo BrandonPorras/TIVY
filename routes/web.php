@@ -24,5 +24,10 @@ Route::get('/respuesta', function(){
 })->name('respuesta');
 
 Route::get('activacion/{codigo}', 'UserController@activate')->name('activate');
-
 Route::post('complete/{id}','UserController@complete')->name('complete');
+
+//users
+Route::get('/user/show/{user}', 'UserController@show')->name('user.show');
+Route::delete('/user/delete/{user}','UserController@destroy')->name('user.destroy');
+Route::get('/user/edit/{user}','UserController@edit')->name('user.edit');
+Route::put('/user/update/{id}','UserController@update')->name('user.update');
