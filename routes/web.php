@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/pages/profile/{user}', 'UserController@show')->name('user.show');
+Route::get('/profile/{user}', 'UserController@show')->name('user.show');
 
 Route::get('/respuesta', function(){
     return view('welcome');
