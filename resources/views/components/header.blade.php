@@ -56,7 +56,12 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-            </div>
+
+                <a class="" href="{{ route('user.show', Auth::user()) }}">{{ Auth::user()->name }}  </a>
+
+              </div>
+              
+
         </li>
     @endguest
       </ul>

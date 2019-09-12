@@ -6,12 +6,15 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid ">
+
+   
         <div class="row d-flex ">
+
+            <div>hola</div>
             <div class="col-sm-2 col-12 bg-warning">
                 @component('components.card.profile',
                 ['img'=>'/storage/milos.png',
-                'name'=>'Ricardo Milos',
+                'name'=>{{$user->name }},
                 'description'=>'Bailar, sonreir, ser Ricardo Milos',
                 'email'=>'ricardomilos@dance.com',
                 'facebook'=>'Ricardo Milos',
@@ -33,9 +36,12 @@
             </div>
         </div>
     </div>
+
+    
 @endsection
 
 @section('footer')
+
     @component('components.footer')        
     @endcomponent
 @endsection

@@ -23,6 +23,11 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
+        $filePath = storage_path('app/public/storage' . $user->img);
+
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
         $user->delete();
         return redirect()->route('home');
     }
@@ -38,12 +43,28 @@ class UserController extends Controller
         $this->validate($request,[
             'name'=>'required|min:5'
           ]);    
-          $user=User::findOrFail($id);    
+          $user=User::findOrFail($id); 
+
+          if ($request->hasFile('img')) {
+            // Eliminar imagen si  se va a actualizar
+            $filePath = storage_path('app/public/storage/' . $user->img);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+            // Subir nueva imagen
+            $file = $request->file('img');
+            $image_profile = time() . $file->getClientOriginalName();
+            $user->img = $image_profile;
+            $file->storeAs('public/storage', $image_profile);
+        }
+
           $user->name=$request->name;
+          $user->lastname=$request->lastname;
+          $user->fecha=$request->fecha;
           $user->email=$request->email;   
           $user->password=bcrypt($request->password);
           $user->save();   
-          return redirect()->route('publications.index');
+          return redirect()->route('home');
     }
 
     public function activate($codigo){
