@@ -32,3 +32,5 @@ Route::get('activacion/{codigo}', 'UserController@activate')->name('activate');
 Route::post('complete/{id}','UserController@complete')->name('complete');
 
 Route::post('complete/{id}','UserController@complete')->name('complete');
+
+Route::resource('tivies', 'TivyController');

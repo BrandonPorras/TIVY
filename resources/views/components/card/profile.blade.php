@@ -5,7 +5,7 @@
       <strong>
         {{$name}}
       </strong>
-    </h4>
+    </h4>   
     <p class="row card-text px-3 pb-2 text-break">
       {{$description}}
     </p>
@@ -29,6 +29,7 @@
       @component('components.link.activity',[ 'img'=> "/storage/leer.png",'link'=>'no'])
       @endcomponent
       <button type="button" class="rounded-circle py-1"  style="width:60px; height:60px">+</button>     
+     
     </div>  
   </div>
 </div>

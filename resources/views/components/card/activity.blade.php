@@ -3,5 +3,5 @@
   <div class="card-body px-1 py-1">
     <h5 class="card-title mb-1">Tivy</h5>
     <p class="card-text">Date</p>
-  </div>
+  </div>  
 </div>
