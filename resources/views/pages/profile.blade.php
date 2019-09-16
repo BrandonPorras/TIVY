@@ -12,6 +12,8 @@ use TIVY\tivy;
 $tivies= Tivy::all();     
 ?>
 
+//kkajdnjajndajd
+
         <div class="row d-flex ">
 
            
