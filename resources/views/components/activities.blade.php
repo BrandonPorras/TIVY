@@ -3,12 +3,14 @@
         <Strong>@lang($activityTitle)</Strong>
     </h4>
     <div class="row d-flex flex-nowrap flex-lg-wrap pl-2 scrolling-wrapper justify-content-start  ">
-        @component('components.card.activity')
+
+        @forelse($tivies as $tivy)
+        @if($tivy->user_id==$user->id)
+        @component('components.card.activity',['tivy'=>$tivy])
         @endcomponent
-        @component('components.card.activity')
-        @endcomponent
-        @component('components.card.activity')
-        @endcomponent
+        @endforelse
+        @endif
+ 
         @if($buttonCreate)
             <div class="card mb-4 border-0 mx-2" style=" flex: 0 0 40%;">
                 <button type="button" data-toggle="modal" data-target="#create-dashboard" class="btn btn-transparent border border-info" style="flex:0 0 40%; ">
