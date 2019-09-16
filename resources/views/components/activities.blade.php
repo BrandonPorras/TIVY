@@ -5,11 +5,16 @@
     <div class="row d-flex flex-nowrap flex-lg-wrap pl-2 scrolling-wrapper justify-content-start  ">
 
         @forelse($tivies as $tivy)
-        @if($tivy->user_id==$user->id)
+        @if($tivy->user_id== 
+        Auth::user()->id)
         @component('components.card.activity',['tivy'=>$tivy])
         @endcomponent
-        @endforelse
+       
         @endif
+        @empty<p></p>  
+        @endforelse
+          
+        
  
         @if($buttonCreate)
             <div class="card mb-4 border-0 mx-2" style=" flex: 0 0 40%;">
@@ -20,6 +25,7 @@
                 </button>
             </div>
         @endif
+         
     </div>
 </div>
 
