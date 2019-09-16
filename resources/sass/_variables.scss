@@ -17,3 +17,86 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+
+/// Color Tivy
+
+$tivyWhite:#F0E9E3;
+$tivyDarkBlue:#04263F;
+$tivyLightBlue:#00B7FF;
+$tivyBlue:#0077FF;
+$tivyDarkOrange:#F27235;
+$tivyLightOrange:#F29B35;
+$tivyBlack:#000;
+$tivyWhite:#fff;
+
+// class
+
+
+.navy{
+    background: $tivyDarkBlue;
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: auto;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+
+  }s
+
+  #meCagoEnEldegradadodePriscilla{
+    background-image: linear-gradient(to right, $tivyLightOrange ,$tivyBlue);
+  }
+
+#card-profile{
+  margin-top: 1rem;
+}
+
+.text-profile{
+  color:$tivyBlack;
+}
+.bg-profile{
+  background: $tivyWhite;
+}
+    @media (max-width: 992px){
+      #navbarNav{
+        position: absolute;
+        z-index: 100;
+        background: white;
+        right: -15px;
+        top: 64px;
+      }
+      #searchNav{
+        position: absolute;
+        z-index: 100;
+        background: white;
+        left: -15px;
+        top: 64px;
+      }
+      .bg-profile{
+        background: $tivyLightBlue
+
+      }
+  .text-profile{
+    color:$tivyWhite
+  }
+      
+  .profile-img{
+    position: absolute;
+    top:-4rem;
+    }
+    #body-profile{
+      margin-top:2rem;
+    }
+    #card-profile{
+      margin-top: 4rem;
+    }
+  }
+
+
+
+
