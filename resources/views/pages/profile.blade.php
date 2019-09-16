@@ -5,7 +5,7 @@
     @endcomponent 
 @endsection
 
-
+<!--Hice push-->
 <?php 
 use TIVY\tivy;    
 $tivies= Tivy::all();     
