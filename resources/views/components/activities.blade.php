@@ -3,19 +3,22 @@
         <Strong>@lang($activityTitle)</Strong>
     </h4>
     <div class="row d-flex flex-nowrap flex-lg-wrap pl-2 scrolling-wrapper justify-content-start  ">
-
         @forelse($tivies as $tivy)
-        @if($tivy->user_id== 
-        Auth::user()->id)
-        @component('components.card.activity',['tivy'=>$tivy])
+        @if($tivy->user_id== Auth::user()->id)
+        <button class=" bg-transparent border-0 p-0 {{$tivy->id}}" 
+            style="flex:0 0 40%" data-toggle="modal" data-target="{{"#tivy-".($tivy->id)}}" >
+        @component('components.card.activity',['tivy'=>$tivy]))
+        @endcomponent  
+     </button>
+
+        @component('components.dashboard.tivy.show',['tivy'=>$tivy])
         @endcomponent
-       
+        @component('components.dashboard.tivy.edit',['tivy'=>$tivy, 'user'=>Auth::user()]))
+        @endcomponent  
         @endif
         @empty<p></p>  
-        @endforelse
-          
-        
- 
+        @endforelse        
+
         @if($buttonCreate)
             <div class="card mb-4 border-0 mx-2" style=" flex: 0 0 40%;">
                 <button type="button" data-toggle="modal" data-target="#create-dashboard" class="btn btn-transparent border border-info" style="flex:0 0 40%; ">

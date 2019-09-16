@@ -48,6 +48,7 @@ $tivies= Tivy::all();
             </div>
             <div class="col-lg-5 col-12 bg-white">
                 @component('components.activities',['activityTitle'=>'My Tivys','buttonCreate'=>true,'tivies'=>$tivies])
+              
                 @endcomponent
                 @component('components.activities',['activityTitle'=>'Pending Tivys','buttonCreate'=>false,'tivies'=>$tivies])
                 @endcomponent
@@ -61,9 +62,7 @@ $tivies= Tivy::all();
         </div>
     </div>
     @component('components.menu.menu')
-    @endcomponent
-    @component('components.dashboard.tivy.edit')
-    @endcomponent
+    @endcomponent   
     @component('components.dashboard.tivy.create')
     @endcomponent
 @endsection
