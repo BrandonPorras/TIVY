@@ -1,3 +1,6 @@
+ <!-- CSRF Token -->
+ <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 <div class="row px-4 py-1">
     <h4 class="my-3">
         <Strong>@lang($activityTitle)</Strong>

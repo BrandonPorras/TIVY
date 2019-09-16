@@ -31,6 +31,7 @@ Route::get('/respuesta', function(){
 Route::get('activacion/{codigo}', 'UserController@activate')->name('activate');
 Route::post('complete/{id}','UserController@complete')->name('complete');
 
-Route::post('complete/{id}','UserController@complete')->name('complete');
+//Route::post('complete/{id}','UserController@complete')->name('complete');
 
-Route::resource('tivies', 'TivyController');
+Route::resource('tivy','TivyController')->except(['update']);
+Route::put('tivy/{id}','TivyController@update')->name('tivy.update');
