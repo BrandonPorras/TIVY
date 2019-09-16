@@ -19,10 +19,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+Route::get('/profile/{user}', 'UserController@show')->name('user.show');
+
 Route::get('/respuesta', function(){
     return view('welcome');
 })->name('respuesta');
 
 Route::get('activacion/{codigo}', 'UserController@activate')->name('activate');
-
 Route::post('complete/{id}','UserController@complete')->name('complete');
+
+//Route::post('complete/{id}','UserController@complete')->name('complete');
+
+Route::resource('tivy','TivyController')->except(['update']);
+Route::put('tivy/{id}','TivyController@update')->name('tivy.update');

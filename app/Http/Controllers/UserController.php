@@ -13,75 +13,60 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+   
+    public function show(User $user)
     {
-        //
+       return view('pages.profile', ['user'=> $user]);
     }
+    
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function destroy(User $user)
     {
-        //
-    }
+        $filePath = storage_path('app/public/storage' . $user->img);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+        $user->delete();
+        return redirect()->route('home');
     }
+    
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
-    {
-        //
+    {        $user=User::findOrFail($id);  
+        return view('user.edit',['user' => $user]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
-    {
-        //
-    }
+    {               
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+  
+        $this->validate($request,[
+            'name'=>'required|min:5'
+          ]);    
+          $user=User::findOrFail($id); 
+
+          if ($request->hasFile('img')) {
+            // Eliminar imagen si  se va a actualizar
+            $filePath = storage_path('app/public/storage/' . $user->img);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+            // Subir nueva imagen
+            $file = $request->file('img');
+            $image_profile = time() . $file->getClientOriginalName();
+            $user->img = $image_profile;
+            $file->storeAs('public/storage', $image_profile);
+        }
+
+          $user->name=$request->name;
+          $user->lastname=$request->lastname;
+          $user->fecha=$request->fecha;
+          $user->email=$request->email;   
+          $user->password=bcrypt($request->password);
+          $user->save();   
+          return redirect()->route('home');
     }
 
     public function activate($codigo){

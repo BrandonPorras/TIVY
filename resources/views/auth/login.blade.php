@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container-fluid m-0 p-0">
-    <div class=" d-flex flex-xl-row flex-lg-row flex-md-row flex-column">
+    <div class=" d-flex flex-sm-row  flex-column">
         @component('components.hero')
             
         @endcomponent
-        <div class="p-0 col-12 col-xl-4 col-lg-4 col-md-4 d-flex align-items-center bg-white" >
+        <div class="p-0 col-12 col-sm-4  d-flex align-items-center bg-white" >
             <div class="card col-12 border-0">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -31,7 +31,7 @@
                                 @enderror
                         </div>
 
-                        <div class="form-group ">
+                        <div class="form-group row d-flex justify-content-around">
                                 <div class="form-check p-0 m-0">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label" for="remember">
