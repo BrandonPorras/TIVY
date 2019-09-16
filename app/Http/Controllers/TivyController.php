@@ -6,6 +6,7 @@ use TIVY\Tivy;
 use Illuminate\Http\Request;
 use TIVY\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Validator;
 use Redirect;
 
 class TivyController extends Controller
@@ -92,7 +93,9 @@ class TivyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {             
+    {     
+        
+        
         $tivy = tivy::findOrFail($id);
         
              ///////////////////////
@@ -143,4 +146,7 @@ class TivyController extends Controller
         $tivy->delete();
         return redirect('/home')->with('success', 'Eliminado');
     }
+
+
+    
 }

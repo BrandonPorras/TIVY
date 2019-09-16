@@ -34,7 +34,7 @@ $tivies= Tivy::all();
 
                 <button type="button" class="rounded-circle py-1" style="width:60px; height:60px" data-toggle="modal" data-target=".bd-create-modal-xl">agregar</button>
 
-                {{-------------------- modal --------------------}}
+                {{-------------------- modal create tivy --------------------}}
                 <div class="modal fade bd-create-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                  <div class="modal-dialog modal-xl">
                    <div class="modal-content">
@@ -49,37 +49,38 @@ $tivies= Tivy::all();
                                 @method('POST')
                                 <div class="form-group">
                                      <label for="">@lang('tittle')</label>   
-                                     <input class="form-control"  type="text" name="tittle" id="tittle" placeholder="@lang('Title')">
-                                 </div>
+                                     <input class="form-control "  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required>
+                                    
+                                    </div>
                             
                                  <div class="form-group">
                                     <label for="">@lang('description')</label>   
-                                    <input class="form-control"  type="text" name="description" id="description" placeholder="@lang('description')">
+                                    <input class="form-control"  type="text" name="description" id="description" placeholder="@lang('description')" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('date')</label>   
-                                    <input class="form-control"  type="date" name="date" id="date">
+                                    <input class="form-control"  type="date" name="date" id="date" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('startTime')</label>   
-                                    <input class="form-control"  type="time" name="startTime" id="startTime">
+                                    <input class="form-control"  type="time" name="startTime" id="startTime" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('duration')</label>   
-                                    <input class="form-control"  type="time" name="duration" id="duration">
+                                    <input class="form-control"  type="time" name="duration" id="duration" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('place')</label>   
-                                    <input class="form-control"  type="text" name="place" id="place">
+                                    <input class="form-control"  type="text" name="place" id="place" required placeholder="Parque, Esparza, Puntarenas">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('capacity')</label>   
-                                    <input class="form-control"  type="number" name="capacity" id="capacity">
+                                    <input class="form-control"  type="number" name="capacity" id="capacity" required>
                                 </div>
                             
                                 <div class="row">
@@ -149,37 +150,37 @@ $tivies= Tivy::all();
                                 <label for="">@lang('editar')</label> 
                                 <div class="form-group">
                                      <label for="">@lang('tittle')</label>   
-                                     <input class="form-control"  type="text" name="tittle" id="tittle" value={{$tivy->tittle}}>
+                                     <input class="form-control"  type="text" name="tittle" id="tittle" value={{$tivy->tittle}} required>
                                  </div>
                             
                                  <div class="form-group">
                                     <label for="">@lang('description')</label>   
-                                    <input class="form-control"  type="text" name="description" id="description" value={{$tivy->description}}>
+                                    <input class="form-control"  type="text" name="description" id="description" value={{$tivy->description}} required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('date')</label>   
-                                    <input class="form-control"  type="date" name="date" id="date" value={{$tivy->date}}>
+                                    <input class="form-control"  type="date" name="date" id="date" value={{$tivy->date}} required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('startTime')</label>   
-                                    <input class="form-control"  type="time" name="startTime" id="startTime" value={{$tivy->startTime}}>
+                                    <input class="form-control"  type="time" name="startTime" id="startTime" value={{$tivy->startTime}} required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('duration')</label>   
-                                    <input class="form-control"  type="time" name="duration" id="duration" value={{$tivy->duration}}>
+                                    <input class="form-control"  type="time" name="duration" id="duration" value={{$tivy->duration}} required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('place')</label>   
-                                    <input class="form-control"  type="text" name="place" id="place" value={{$tivy->place}}>
+                                    <input class="form-control"  type="text" name="place" id="place" value={{$tivy->place}} required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">@lang('capacity')</label>   
-                                    <input class="form-control"  type="number" name="capacity" id="capacity" value={{$tivy->capacity}}>
+                                    <input class="form-control"  type="number" name="capacity" id="capacity" value={{$tivy->capacity}} required>
                                 </div>
                             
                                 <div class="row">
