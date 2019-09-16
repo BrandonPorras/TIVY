@@ -2,14 +2,22 @@
     <h4 class="my-3">
         <Strong>@lang($activityTitle)</Strong>
     </h4>
-    <div class="row d-flex justify-content-around ">
+    <div class="row d-flex flex-nowrap flex-lg-wrap pl-2 scrolling-wrapper justify-content-start  ">
         @component('components.card.activity')
         @endcomponent
         @component('components.card.activity')
         @endcomponent
         @component('components.card.activity')
         @endcomponent
-        @component('components.card.activity')
-        @endcomponent
+        @if($buttonCreate)
+            <div class="card mb-4 border-0 mx-2" style=" flex: 0 0 40%;">
+                <button type="button" data-toggle="modal" data-target="#create-dashboard" class="btn btn-transparent border border-info" style="flex:0 0 40%; ">
+                    <p style="padding-top:45%;padding-bottom:45%">
+                        @lang('Create a new Tivy')
+                    </p>
+                </button>
+            </div>
+        @endif
     </div>
 </div>
+

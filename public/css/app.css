@@ -4,6 +4,72 @@
   background: #04263F;
 }
 
+.scrolling-wrapper {
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: auto;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+s #meCagoEnEldegradadodePriscilla {
+  background-image: linear-gradient(to right, #F29B35, #0077FF);
+}
+
+#card-profile {
+  margin-top: 1rem;
+}
+
+.text-profile {
+  color: #000;
+}
+
+.bg-profile {
+  background: #fff;
+}
+
+@media (max-width: 992px) {
+  #navbarNav {
+    position: absolute;
+    z-index: 100;
+    background: white;
+    right: -15px;
+    top: 64px;
+  }
+
+  #searchNav {
+    position: absolute;
+    z-index: 100;
+    background: white;
+    left: -15px;
+    top: 64px;
+  }
+
+  .bg-profile {
+    background: #00B7FF;
+  }
+
+  .text-profile {
+    color: #fff;
+  }
+
+  .profile-img {
+    position: absolute;
+    top: -4rem;
+  }
+
+  #body-profile {
+    margin-top: 2rem;
+  }
+
+  #card-profile {
+    margin-top: 4rem;
+  }
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
