@@ -39,11 +39,23 @@ class TivyController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'tittle' => 'required',
+             'img' => 'image|nullable|max:1999',
+             'description' => 'required',
+             'date' => 'required',
+             'startTime'=> 'required',
+             'duration' => 'required',
+             'place'=> 'required',
+             'capacity'=>'required|integer|min:0'
+         ]);
+
         $image_tivy = 'image-not-found.png';        
         if ($request->hasFile('imagen_publication')) {            
             $file = $request->imagen_publication;
             $image_tivy = time() . $file->getClientOriginalName();
-            $file->storeAs('app/public/storage/', $image_tivy);  
+            $file->storeAs('public/storage/', $image_tivy);  
              }
 
         $tivy = new Tivy();
@@ -95,21 +107,38 @@ class TivyController extends Controller
     public function update(Request $request, $id)
     {     
         
-        
+        $this->validate($request, [
+            'tittle' => 'required',
+             'img' => 'image|nullable|max:1999',
+             'description' => 'required',
+             'date' => 'required',
+             'startTime'=> 'required',
+             'duration' => 'required',
+             'place'=> 'required',
+             'capacity'=>'required|integer|min:0'
+         ]);
+
         $tivy = tivy::findOrFail($id);
         
              ///////////////////////
-             if ($request->hasFile('img')) {
+       
+         
+             if ($request->hasFile('imagen_publication')) {
                 // Eliminar imagen si  se va a actualizar
-                $filePath = storage_path('app/public/storage/' . $tivy->img);
+                $filePath = storage_path('public/storage/'. $tivy->img);
+               
                 if (file_exists($filePath)) {
+                   
                     unlink($filePath);
                 }    
-                // Subir nueva imagen
+                // Subir nueva imagen                  
                 $file = $request->imagen_publication;
                 $image_tivy = time() . $file->getClientOriginalName();
-                $file->storeAs('app/public/storage/', $image_tivy);  
+               
+                $file->storeAs('public/storage/', $image_tivy);  
+                
                 $tivy->img = $image_tivy;
+                
             }
              /////////////////////
         $tivy->tittle  = $request->tittle;
@@ -122,7 +151,7 @@ class TivyController extends Controller
         $tivy->capacity = $request->capacity;
       //  $user = User::where('id', $request->user);
         $tivy->user()->associate($request->user);          
-        $tivy->save();      
+        $tivy->update();      
         return redirect()->route('home');
        
     }

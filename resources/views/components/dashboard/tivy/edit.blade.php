@@ -4,13 +4,13 @@
          
              <div class="container-fluid d-flex justify-content-center">
                 
-                 <form method="post" action="{{route('tivy.update', $tivy->id)}}" >
+                 <form method="post" action="{{route('tivy.update', $tivy->id)}}" enctype="multipart/form-data" >
                      @csrf
                      @method('PUT')    
                      <label for="">@lang('editar')</label> 
                      <div class="form-group">
                           <label for="">@lang('tittle')</label>   
-                          <input class="form-control"  type="text" name="tittle" id="tittle" value={{$tivy->tittle}} required>
+                          <input class="form-control"  type="text" name="tittle" id="tittle" value={{$tivy->tittle}} >
                       </div>
                  
                       <div class="form-group">
@@ -44,15 +44,15 @@
                      </div>
                  
                      <div class="row">
-                         <div class="input-group mb-3 ml-5 col-10">
-                             <div class="input-group-prepend">
-                               <span class="input-group-text" id="inputGroupFileAddon01">Upload image</span>
-                             </div>
-                             <div class="custom-file">
-                                 <input class=" custom-file-input" onchange="changeImage(this)" id="imagen_publication" name="imagen_publication" type="file">>
-                               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                             </div>
-                         </div>
+                        <div class="input-group mb-3 ml-5 col-10">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupFileAddon01">Upload image</span>
+                            </div>
+                            <div class="custom-file">
+                                <input class=" custom-file-input" onchange="changeImage(this)" id="imagen_publication" name="imagen_publication" type="file">>
+                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
                          
                      </div>
                      
