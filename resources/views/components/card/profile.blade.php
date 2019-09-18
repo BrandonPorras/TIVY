@@ -1,4 +1,4 @@
-<div id="meCagoEnEldegradadodePriscilla" class="row col-12 position-absolute bg-primary mx-0 px-0" style="height:50%;">
+<div  class="row col-12 position-absolute  mx-0 px-0 gradient" style="height:50%;">
 </div>
 
 <div id="card-profile"class="row d-flex mx-0 py-0 col-lg-12 col-md-8 col-sm-9 col-10  bg-white mb-4 my-lg-0  pt-4 px-0 pb-0 " >

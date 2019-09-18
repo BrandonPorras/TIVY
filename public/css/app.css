@@ -15,8 +15,8 @@
   display: none;
 }
 
-s #meCagoEnEldegradadodePriscilla {
-  background-image: linear-gradient(to right, #F29B35, #0077FF);
+.gradient {
+  background-image: linear-gradient(to right, #F29B35, #00B7FF);
 }
 
 #card-profile {

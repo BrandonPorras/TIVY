@@ -5,16 +5,12 @@
     <div class="row d-flex flex-nowrap flex-lg-wrap pl-2 scrolling-wrapper justify-content-start  ">
         @forelse($tivies as $tivy)
         @if($tivy->user_id== Auth::user()->id)
-        <button class=" bg-transparent border-0 p-0 {{$tivy->id}}" 
-            style="flex:0 0 40%" data-toggle="modal" data-target="{{"#tivy-".($tivy->id)}}" >
-        @component('components.card.activity',['tivy'=>$tivy]))
-        @endcomponent  
-     </button>
-
-        @component('components.dashboard.tivy.show',['tivy'=>$tivy])
-        @endcomponent
-        @component('components.dashboard.tivy.edit',['tivy'=>$tivy, 'user'=>Auth::user()]))
-        @endcomponent  
+            @component('components.card.activity',['tivy'=>$tivy]))
+            @endcomponent  
+            @component('components.dashboard.tivy.show',['tivy'=>$tivy])
+            @endcomponent
+            @component('components.dashboard.tivy.edit',['tivy'=>$tivy, 'user'=>Auth::user()]))
+            @endcomponent  
         @endif
         @empty<p></p>  
         @endforelse        
@@ -28,7 +24,6 @@
                 </button>
             </div>
         @endif
-         
     </div>
 </div>
 

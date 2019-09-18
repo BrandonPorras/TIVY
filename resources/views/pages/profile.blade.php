@@ -12,7 +12,6 @@ $tivies= Tivy::all();
 ?>
 
 
-
 @section('content')
     <div class="container-fluid ">
         <div class="row d-flex ">
@@ -42,7 +41,9 @@ $tivies= Tivy::all();
                         @component('components.link.activity',['img'=>'/storage/leer.png','link'=>'no'])
                         @endcomponent
                               
-                        <button type="button" data-toggle="modal" data-target="#edit-dashboard" class=" py-0 px-0 border border-primary bg-transparent rounded-circle" style="flex:0 0 30%; "><p class="my-0 mx-0"style="padding-top:30%;padding-bottom:30%">+</p></button>  
+                        <button type="button" data-toggle="modal" data-target="#edit-dashboard" class=" py-0 px-0 border border-primary bg-transparent rounded-circle" style="flex:0 0 30%; ">
+                            <p class="my-0 mx-0"style="padding-top:30%;padding-bottom:30%">+</p>
+                        </button>  
                     </div>
                 </div>
             </div>
@@ -66,6 +67,7 @@ $tivies= Tivy::all();
     @component('components.dashboard.tivy.create')
     @endcomponent
 @endsection
+
 @section('footer')
     @component('components.footer')        
     @endcomponent
