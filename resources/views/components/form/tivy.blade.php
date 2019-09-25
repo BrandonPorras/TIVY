@@ -9,8 +9,9 @@
     </div>
 
     <div class="form-group mt-4">
-        <textarea class="form-control" name="description" id="description"
-          required style="height=30%">@lang('description') </textarea>
+        <textarea class="form-control" name="description" id="description" required style="height=30%">
+          @lang('description') 
+        </textarea>
     </div>
 
     <div class="row col-12 d-flex justify-content-lg-between justifify-content-start flex-column flex-lg-row px-0 mx-0">
@@ -88,3 +89,25 @@
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
     <button class="btn btn-success" type="submit">{{$button_text}}</button>
 </form>
+
+
+
+<script>        
+        let imageDOM = document.querySelector('.image-profile');
+        
+        imageDOM.addEventListener('click', function(){
+            document.querySelector('#imagen_perfil').click();
+        });
+    
+        function changeImage(input){            
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    imageDOM.src = e.target.result;
+                }
+    
+                reader.readAsDataURL(input.files[0]);
+            }
+        };
+    </script>
