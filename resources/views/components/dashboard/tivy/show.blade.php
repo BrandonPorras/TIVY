@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="modal-content border-top-0 px-2 py-2">
-                        @component('components.form.tivy') 
+                        @component('components.form.tivy',['tivy'=>$tivy]) 
                         @slot('method')
                             @method('POST')
                         @endslot
