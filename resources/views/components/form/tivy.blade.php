@@ -1,8 +1,8 @@
-<form method="POST" action="{{ route('tivy.store') }}"  enctype="multipart/form-data" class="col-12 mx-0 pb-2">
+<form method="POST" action="{{ $route }}"  enctype="multipart/form-data" class="col-12 mx-0 pb-2">
     @csrf
     <!--se utiliza el metodo put para enviar datos
     mediante esta directiva-->
-    @method('POST')
+    {{$method}}
     <div class="form-group mt-4 ">
     
         <input class="form-control "  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required>
@@ -86,5 +86,5 @@
     </div>
     <input class="d-none custom-file-input" onchange="changeImage(this)" id="imagen_publication" name="imagen_publication" type="file">
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
-    <button class="btn btn-success" type="submit">@lang('Add tivy')</button>
+    <button class="btn btn-success" type="submit">{{$button_text}}</button>
 </form>
