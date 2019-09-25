@@ -2,6 +2,7 @@
 
 @section('header')   
     @component('components.header')
+    
     @endcomponent 
 @endsection
 
@@ -10,7 +11,6 @@
 use TIVY\tivy;    
 $tivies= Tivy::all();     
 ?>
-
 
 @section('content')
     <div class="container-fluid ">
