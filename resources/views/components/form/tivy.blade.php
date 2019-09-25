@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    <input class="d-none custom-file-input" onchange="changeImage(this)" id="imagen_publication" name="imagen_publication" type="file">
+    <input class="d-none custom-file-input" onchange="changeImage(this)" id="btn_file" name="btn_file" type="file">
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
     <button class="btn btn-success" type="submit">{{$button_text}}</button>
 </form>

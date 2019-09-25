@@ -3,7 +3,9 @@
     <div class="modal-content">
         <div class="modal-header py-0 px-0">
             <div class="row col-12 mx-0 px-0">
-                <label for="imagen_publication" class="col-12 py-0 px-0 my-0 mx-0"><img src="/storage/naruto-run.jpg" alt=" No hays" class="card-img-top"></label>
+                <label for="" class="col-12 py-0 px-0 my-0 mx-0">
+                    <img src="/storage/naruto-run.jpg" alt=" No hays" class="card-img-top">
+                </label>
                 <h1 class="modal-title position-absolute" style="bottom:0rem; left:0rem; right:0rem; top:0rem; margin:auto;">Modal title</h5>
            
                 <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close" style="top:1rem; right:1rem">
