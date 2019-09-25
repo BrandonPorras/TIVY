@@ -25,7 +25,7 @@
                         @csrf
                         <!--se utiliza el metodo put para enviar datos
                         mediante esta directiva-->
-                        @method('POST')
+                        @method('PUT')
                         <div class="form-group mt-4 ">
                             <input class="form-control "  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" value="{{$tivy->tittle}}" required>
                         </div>
