@@ -107,6 +107,7 @@ class TivyController extends Controller
     public function update(Request $request, $id)
     {     
         
+
         $this->validate($request, [
             'tittle' => 'required',
              'img' => 'image|nullable|max:1999',
