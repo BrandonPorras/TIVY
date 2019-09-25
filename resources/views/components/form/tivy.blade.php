@@ -92,22 +92,3 @@
 
 
 
-<script>        
-        let imageDOM = document.querySelector('.image-profile');
-        
-        imageDOM.addEventListener('click', function(){
-            document.querySelector('#imagen_perfil').click();
-        });
-    
-        function changeImage(input){            
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-    
-                reader.onload = function (e) {
-                    imageDOM.src = e.target.result;
-                }
-    
-                reader.readAsDataURL(input.files[0]);
-            }
-        };
-    </script>
