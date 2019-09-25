@@ -50,12 +50,12 @@ class TivyController extends Controller
              'place'=> 'required',
              'capacity'=>'required|integer|min:0'
          ]);
-
+dd($request);
         $image_tivy = 'image-not-found.png';        
-        if ($request->hasFile('imagen_publication')) {            
-            $file = $request->imagen_publication;
+        if ($request->hasFile('btn_file')) {            
+            $file = $request->btn_file;
             $image_tivy = time() . $file->getClientOriginalName();
-            $file->storeAs('/tivy/', $image_tivy);  
+            $file->storeAs('/public/tivy/', $image_tivy);  
              }
 
         $tivy = new Tivy();
@@ -124,19 +124,19 @@ class TivyController extends Controller
              ///////////////////////
        
          
-             if ($request->hasFile('imagen_publication')) {
+             if ($request->hasFile('btn_file')) {
                 // Eliminar imagen si  se va a actualizar
-                $filePath = storage_path('/tivy/'. $tivy->img);
+                $filePath = storage_path('/public/tivy/'. $tivy->img);
                
                 if (file_exists($filePath)) {
                    
                     unlink($filePath);
                 }    
                 // Subir nueva imagen                  
-                $file = $request->imagen_publication;
+                $file = $request->btn_file;
                 $image_tivy = time() . $file->getClientOriginalName();
                
-                $file->storeAs('/tivy/', $image_tivy);  
+                $file->storeAs('/public/tivy/', $image_tivy);  
                 
                 $tivy->img = $image_tivy;
                 
@@ -165,7 +165,7 @@ class TivyController extends Controller
      */
     public function destroy(Tivy $tivy)
     {
-        $filePath = storage_path('/tivy/' . $tivy->img);
+        $filePath = storage_path('/public/tivy/' . $tivy->img);
 
         if (file_exists($filePath)) {
             unlink($filePath);
