@@ -5,7 +5,7 @@
                 <div class="modal-header py-0 px-0">
                     <div class="row col-12 mx-0 px-0">
                         <label for="" class="col-12 py-0 px-0 my-0 mx-0">
-                        <img src="{{'/storage/storage/'.$tivy->img}}" alt=" No hays" class="card-img-top">
+                        <img src="{{asset('storage/tivy/'.$tivy->img)}}" alt=" No hays" class="card-img-top">
                         </label>
                     <h1 class="text-white modal-title position-absolute" style="bottom:2rem; left:2rem;">{{$tivy->tittle}}</h5>        
                         <div class="row position-absolute" style="top:1rem;left:2rem;">
