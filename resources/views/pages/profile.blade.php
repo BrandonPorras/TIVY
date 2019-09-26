@@ -87,7 +87,6 @@ $tivies= Tivy::all();
                 reader.onload = function (e) {
                     imageDOM.src = e.target.result;
                 }
-    
                 reader.readAsDataURL(input.files[0]);
             }
         };
