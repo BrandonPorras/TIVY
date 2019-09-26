@@ -6,11 +6,14 @@
 @endsection
 
 <!--Hice push-->
+<<<<<<< HEAD
 <?php 
 use TIVY\tivy;    
 $tivies= Tivy::all();
      
 ?>
+=======
+>>>>>>> 7dd5397d0157dd07ed8126d4d4b32dda481350b8
 
 @section('content')
     <div class="container-fluid ">
@@ -48,16 +51,16 @@ $tivies= Tivy::all();
                 </div>
             </div>
             <div class="col-lg-5 col-12 bg-white">
-                @component('components.activities',['activityTitle'=>'My Tivys','buttonCreate'=>true,'tivies'=>$tivies])
+                @component('components.activities',['activityTitle'=>'My Tivys','buttonCreate'=>true,'tivies'=>$myTivies])
               
                 @endcomponent
-                @component('components.activities',['activityTitle'=>'Pending Tivys','buttonCreate'=>false,'tivies'=>$tivies])
+                @component('components.activities',['activityTitle'=>'Pending Tivys','buttonCreate'=>false,'tivies'=>$pendingTivies])
                 @endcomponent
             </div>
             <div class="col-lg-5 col-12  bg-white">
-                @component('components.activities',['activityTitle'=>'Upcoming Tivys','buttonCreate'=>false,'tivies'=>$tivies])
+                @component('components.activities',['activityTitle'=>'Upcoming Tivys','buttonCreate'=>false,'tivies'=>$upComingTivies])
                 @endcomponent
-                @component('components.activities',['activityTitle'=>"Tivys I've gone to",'buttonCreate'=>false,'tivies'=>$tivies])
+                @component('components.activities',['activityTitle'=>"Tivys I've gone to",'buttonCreate'=>false,'tivies'=>$tiviesIGone])
                 @endcomponent
             </div>
         </div>

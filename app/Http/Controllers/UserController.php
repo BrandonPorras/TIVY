@@ -5,6 +5,7 @@ namespace TIVY\Http\Controllers;
 use Illuminate\Http\Request;
 use TIVY\User;
 use Redirect;
+USE TIVY\Tivy;
 
 class UserController extends Controller
 {
@@ -17,7 +18,16 @@ class UserController extends Controller
    
     public function show(User $user)
     {
-       return view('pages.profile', ['user'=> $user]);
+        $myTivies= Tivy::all()->where('state','=',2);
+        $pendingTivies= Tivy::all()->where('state','=',1);
+        $tiviesIGone=array();
+        $upComingTivies=array();
+        
+    
+
+        return view('pages.profile', 
+        ['user'=> $user,'myTivies'=>$myTivies,'pendingTivies'=>$pendingTivies,
+        'tiviesIGone'=>$tiviesIGone,'upComingTivies'=>$upComingTivies]);
     }
     
 
