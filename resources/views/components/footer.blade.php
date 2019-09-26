@@ -9,7 +9,8 @@
                 </h5>
                 <small class="text-white">
                     @lang("We are a small company located")
-                    <br>@lang(" in Puntarenas Costa Rica")
+                    <br>
+                    @lang(" in Puntarenas Costa Rica")
                 </small>
             </div>
             <div class="col-md-4 col-12 my-3">

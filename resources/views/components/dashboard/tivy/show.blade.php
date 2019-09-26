@@ -1,7 +1,6 @@
 <div id="{{"tivy-".($tivy->id)}}"  class="modal {{$tivy->id}}" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                
                 <div class="modal-header py-0 px-0">
                     <div class="row col-12 mx-0 px-0">
                         <label for="" class="col-12 py-0 px-0 my-0 mx-0">

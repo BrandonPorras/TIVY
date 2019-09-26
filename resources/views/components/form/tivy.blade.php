@@ -9,8 +9,7 @@
     </div>
 
     <div class="form-group mt-4">
-        <textarea class="form-control" name="description" id="description" required style="height=30%">
-          @lang('description') 
+        <textarea class="form-control" name="description" id="description"  required style="height=30%" placeholder='dsad'>
         </textarea>
     </div>
 
@@ -21,7 +20,7 @@
                 <label for="inputPassword" class="col-sm-1 col-form-label">
                     <i class="text-primary fas fa-calendar-minus fa-2x"></i>
                 </label>
-                <div class="col-sm-11">
+                <div class="col-sm-10">
                     <input class="form-control"  type="date" name="date" id="date" required>
                 </div>
             </div>
@@ -33,7 +32,7 @@
                 <label for="inputPassword" class="col-sm-1 col-form-label">
                     <i class="text-primary fas fa-map-marker-alt fa-2x"></i>
                 </label>
-                <div class="col-sm-11">
+                <div class="col-sm-10">
                     <input class="form-control" type="text" name="place" id="place" required placeholder="Parque, Esparza, Puntarenas">
                 </div>
             </div>                
@@ -41,11 +40,11 @@
         
         <div class="form-group col-12 col-lg-3 px-0 mx-0">
             <label for="">@lang('startTime')</label>
-            <div class="row">
+            <div class="row ">
                 <label for="inputPassword" class="col-sm-1 col-form-label">
                     <i class="text-primary far fa-clock fa-2x"></i>
                 </label>
-                <div class="col-sm-10 ml-3">
+                <div class="col-lg-9 col-sm-10 ml-2">
                     <input class="form-control"  type="time" name="startTime" id="startTime" required>
                 </div>
             </div>               
@@ -55,22 +54,22 @@
     <div class="row col-12 d-flex justify-content-start flex-column flex-lg-row px-0 mx-0">
         <div class="form-group col-12 col-lg-4 px-0 ml-0 mr-lg-4 mr-0">
             <label for="">@lang('duration')</label>  
-            <div class="row">
+            <div class="row ">
                 <label for="inputPassword" class="col-sm-1 col-form-label">
                     <i class="text-primary fas fa-hourglass-half fa-2x"></i>
                 </label>
-                <div class="col-sm-11 ">
+                <div class="col-sm-10 ">
                     <input class="form-control"  type="time" name="duration" id="duration" required>
                 </div>
             </div>
         </div>
-        <div class="form-group col-12 col-lg-4 px-0 ml-4">
+        <div class="form-group col-12 col-lg-4 px-0 mx-0">
             <label for="">@lang('capacity')</label>   
-            <div class="row">
-                <label for="inputPassword" class="col-sm-1 col-form-label px-0">
-                    <i class="text-primary fas fa-user-friends fa-2x"></i>
+            <div class="row ">
+                <label for="inputPassword" class="col-sm-1 col-form-label ">
+                    <i class="text-primary fas fa-user-friends fa-x"></i>
                 </label>
-                <div class="col-sm-11 ">
+                <div class="col-sm-10 ">
                     <input class="form-control"  type="number" name="capacity" id="capacity"  required>
                 </div>
             </div>
