@@ -5,7 +5,7 @@
             <div class="modal-header py-0 px-0">
                 <div class="row col-12 mx-0 px-0">
                     <label for="btn_file" class="col-12 py-0 px-0 my-0 mx-0">
-                        <img src="{{$tivy->img}}" alt=" No hays" class="card-img-top">
+                        <img src="{{asset('storage/tivy/'.$tivy->img)}}" alt=" No hays" class="card-img-top">
                     </label>
                     <div class="row position-absolute" style="top:1rem;left:2rem;">
                         <form action="{{ route('tivy.destroy', $tivy) }}" method="POST">

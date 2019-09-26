@@ -50,7 +50,7 @@ class TivyController extends Controller
              'place'=> 'required',
              'capacity'=>'required|integer|min:0'
          ]);
-dd($request);
+
         $image_tivy = 'image-not-found.png';        
         if ($request->hasFile('btn_file')) {            
             $file = $request->btn_file;
