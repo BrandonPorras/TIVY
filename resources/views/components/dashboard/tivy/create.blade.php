@@ -6,8 +6,6 @@
                 <label for="btn_file" class="col-12 py-0 px-0 my-0 mx-0">
                     <img src="/storage/naruto-run.jpg" alt=" No hays" class="card-img-top">
                 </label>
-               
-           
                 <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close" style="top:1rem; right:1rem">
                     <span aria-hidden="true">&times;</span>
                 </button>

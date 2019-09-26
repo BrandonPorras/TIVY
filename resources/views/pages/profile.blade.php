@@ -2,14 +2,14 @@
 
 @section('header')   
     @component('components.header')
-    
     @endcomponent 
 @endsection
 
 <!--Hice push-->
 <?php 
 use TIVY\tivy;    
-$tivies= Tivy::all();     
+$tivies= Tivy::all();
+     
 ?>
 
 @section('content')

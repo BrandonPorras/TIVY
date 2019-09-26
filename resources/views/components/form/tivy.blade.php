@@ -9,8 +9,7 @@
     </div>
 
     <div class="form-group mt-4">
-        <textarea class="form-control" name="description" id="description"  required style="height=30%" placeholder='dsad'>
-        </textarea>
+        <textarea class="form-control" name="description" id="description"  required style="height=30%" placeholder='@lang('Description')'></textarea>
     </div>
 
     <div class="row col-12 d-flex justify-content-lg-between justifify-content-start flex-column flex-lg-row px-0 mx-0">
@@ -84,7 +83,7 @@
             </div>
         </div>
     </div>
-    <input class="" style="opacity:0" onchange="changeImage(this)" id="btn_file" name="btn_file" type="file">
+    <input class="" style="" onchange="changeImage(this)" id="btn_file" name="btn_file" type="file">
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
     <button class="btn btn-success" type="submit">{{$button_text}}</button>
 </form>
