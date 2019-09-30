@@ -2,7 +2,6 @@
 
 @section('header')   
     @component('components.header')
-    
     @endcomponent 
 @endsection
 
@@ -44,16 +43,20 @@
                 </div>
             </div>
             <div class="col-lg-5 col-12 bg-white">
-                @component('components.activities',['activityTitle'=>'My Tivys','buttonCreate'=>true,'tivies'=>$myTivies])
+                @component('components.activities',
+                ['activityTitle'=>'My Tivys','buttonCreate'=>true,'tivies'=>$myTivies,'styleImg'=>'img-tivy-Small'])
               
                 @endcomponent
-                @component('components.activities',['activityTitle'=>'Pending Tivys','buttonCreate'=>false,'tivies'=>$pendingTivies])
+                @component('components.activities',
+                ['activityTitle'=>'Pending Tivys','buttonCreate'=>false,'tivies'=>$pendingTivies,'styleImg'=>'img-tivy-Small'])
                 @endcomponent
             </div>
             <div class="col-lg-5 col-12  bg-white">
-                @component('components.activities',['activityTitle'=>'Upcoming Tivys','buttonCreate'=>false,'tivies'=>$upComingTivies])
+                @component('components.activities',
+                ['activityTitle'=>'Upcoming Tivys','buttonCreate'=>false,'tivies'=>$upComingTivies,'styleImg'=>'img-tivy-Small'])
                 @endcomponent
-                @component('components.activities',['activityTitle'=>"Tivys I've gone to",'buttonCreate'=>false,'tivies'=>$tiviesIGone])
+                @component('components.activities',
+                ['activityTitle'=>"Tivys I've gone to",'buttonCreate'=>false,'tivies'=>$tiviesIGone,'styleImg'=>'img-tivy-large'])
                 @endcomponent
             </div>
         </div>
@@ -69,24 +72,36 @@
     @endcomponent
 @endsection
 
-<script>        
-        let imageDOM = document.querySelector('.image-profile');
-        
-        imageDOM.addEventListener('click', function(){
-            document.querySelector('#imagen_perfil').click();
-        });
-    
-        function changeImage(input){            
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-    
-                reader.onload = function (e) {
-                    imageDOM.src = e.target.result;
-                }
-                reader.readAsDataURL(input.files[0]);
+<script>     
+    function changeImageCreate(input){
+        let imageCreate=document.querySelector('#imgCreate-Tivy')
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                imageCreate.className='card-img-top';
+                imageCreate.src = e.target.result;
             }
-        };
-    </script>
+            reader.readAsDataURL(input.files[0]);
+        }
+
+    }
+    function closeShow(id){
+        document.querySelector('#closeModalTivy-'+id).click()   
+    }
+
+
+    function changeImageEdit(input,id){      
+        let imageEdit=document.querySelector('#imgEdit-Tivy'+id)    
+        console.log(imageEdit)  
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                imageEdit.src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+</script>
 
 
 

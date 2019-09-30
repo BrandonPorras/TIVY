@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container-fluid m-0 p-0">
-    <div class=" d-flex flex-sm-row  flex-column">
+    <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')
             
         @endcomponent
-        <div class="p-0 col-12 col-sm-4  d-flex align-items-center bg-white" >
+        <div  class="p-0 col-12 col-md-4 d-flex align-items-center bg-white ">
             <div class="card col-12 border-0">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

@@ -3,25 +3,27 @@
     <!--se utiliza el metodo put para enviar datos
     mediante esta directiva-->
     {{$method}}
-    <div class="form-group mt-4 ">
-    
-        <input class="form-control "  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required>
-    </div>
+    @if ($tivy==null)
+        <div class="form-group mt-2 mb-3">
+            <input class="form-control text-primary"  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required >
+        </div>
+    @endif
 
-    <div class="form-group mt-4">
-        <textarea class="form-control" name="description" id="description"  required style="height=30%" placeholder='dsad'>
-        </textarea>
+    <div class="form-group mt-1">
+        <textarea class="form-control" name="description" id="description" required style="height=30%" placeholder='@lang('Description')' {{$disable}}>{{$tivy['description']}}</textarea>
     </div>
 
     <div class="row col-12 d-flex justify-content-lg-between justifify-content-start flex-column flex-lg-row px-0 mx-0">
         <div class="form-group col-12 col-lg-4 px-0 mx-0">
-            <label for="">@lang('date')</label>   
+            <label for="">
+                @lang('date')
+            </label>   
             <div class="row">
                 <label for="inputPassword" class="col-sm-1 col-form-label">
                     <i class="text-primary fas fa-calendar-minus fa-2x"></i>
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control"  type="date" name="date" id="date" required>
+                    <input class="form-control"  type="date" name="date" id="date" required {{$disable}} value="{{$tivy['date']}}">
                 </div>
             </div>
         </div>
@@ -33,7 +35,7 @@
                     <i class="text-primary fas fa-map-marker-alt fa-2x"></i>
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" name="place" id="place" required placeholder="Parque, Esparza, Puntarenas">
+                    <input class="form-control" type="text" name="place" id="place" required placeholder="Parque, Esparza, Puntarenas" {{$disable}} value="{{$tivy['place']}}">
                 </div>
             </div>                
         </div>
@@ -45,7 +47,7 @@
                     <i class="text-primary far fa-clock fa-2x"></i>
                 </label>
                 <div class="col-lg-9 col-sm-10 ml-2">
-                    <input class="form-control"  type="time" name="startTime" id="startTime" required>
+                    <input class="form-control"  type="time" name="startTime" id="startTime" required {{$disable}} value="{{$tivy['startTime']}}">
                 </div>
             </div>               
         </div>
@@ -59,7 +61,7 @@
                     <i class="text-primary fas fa-hourglass-half fa-2x"></i>
                 </label>
                 <div class="col-sm-10 ">
-                    <input class="form-control"  type="time" name="duration" id="duration" required>
+                    <input class="form-control"  type="time" name="duration" id="duration" required {{$disable}} value="{{$tivy['duration']}}">
                 </div>
             </div>
         </div>
@@ -70,7 +72,7 @@
                     <i class="text-primary fas fa-user-friends fa-x"></i>
                 </label>
                 <div class="col-sm-10 ">
-                    <input class="form-control"  type="number" name="capacity" id="capacity"  required>
+                    <input class="form-control"  type="number" name="capacity" id="capacity"  required {{$disable}} value="{{$tivy['capacity']}}">
                 </div>
             </div>
         </div>
@@ -84,9 +86,15 @@
             </div>
         </div>
     </div>
-    <input class="" style="opacity:0" onchange="changeImage(this)" id="btn_file" name="btn_file" type="file">
+    <div class="d-none">
+    <input class="" style="" onchange="{{$changeImg}}" id="{{$btn_id}}" name="btn_file" type="file" >
+    </div>
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
-    <button class="btn btn-success" type="submit">{{$button_text}}</button>
+    @if ($button_text != 'Show Tivy')
+        <div class="row col-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-TivyDarkOrange px-4 rounded-pill">@lang($button_text)</button>
+        </div>
+    @endif
 </form>
 
 
