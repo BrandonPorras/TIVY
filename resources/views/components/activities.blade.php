@@ -16,7 +16,7 @@
         @endif
         @forelse($tivies as $tivy)
             @if($tivy->user_id== Auth::user()->id)
-                @component('components.card.activity',['tivy'=>$tivy]))
+                @component('components.card.activity',['tivy'=>$tivy,'styleImg'=>$styleImg]))
                 @endcomponent  
                 @component('components.dashboard.tivy.show',['tivy'=>$tivy])
                 @endcomponent

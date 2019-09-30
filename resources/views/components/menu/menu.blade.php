@@ -8,7 +8,7 @@
                 <i class="fas fa-plus-square  fa-3x"></i>
             </button>
             <div class="row col-1 d-flex justify-content-center py-0 px-0">
-                <img src={{'/storage/profile.jpg'}} alt="" class="rounded-circle " style="height:3em;">
+                <img src={{'/storage/profile.jpg'}}{{'/storage/profile.jpg'}} alt="" class="rounded-circle " style="height:3em;">
             </div>          
         </div>
     </div>

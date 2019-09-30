@@ -29,12 +29,38 @@ $tivyDarkOrange:#F27235;
 $tivyLightOrange:#F29B35;
 $tivyBlack:#000;
 $tivyWhite:#fff;
-
+$tivyGray:#616161;
 // class
 
-
+.btn-TivyDarkOrange{
+  color: #fff;
+    background-color: $tivyLightOrange !important;
+    border-color: #3490dc;
+}
 .navy{
     background: $tivyDarkBlue;
+}
+
+.img-tivy-Small{
+    width: 100%;
+    height: 8rem;
+    object-fit: cover;
+}
+
+.img-tivy-large{
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+.img-home{
+  width: 100%;
+  height:100vh;
+  object-fit: cover;
+}
+
+.bg-gray{
+  
+  background: $tivyGray;
 }
 
 .scrolling-wrapper {
@@ -95,6 +121,18 @@ $tivyWhite:#fff;
     }
     #card-profile{
       margin-top: 4rem;
+    }
+    .img-tivy-large{
+
+      height: 8rem;
+
+    }
+  }
+
+  @media (max-width: 768px)
+  {
+    .img-home{
+      height:50vh;
     }
   }
 
