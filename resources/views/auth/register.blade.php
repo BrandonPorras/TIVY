@@ -5,23 +5,26 @@
     <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')
         @endcomponent
-        <div class="p-0 col-12 col-md-4 d-flex align-items-center bg-white" style='height:100vh;'>
-            <div class="card border-0"></div>            
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+        <div class="p-0 rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper bg-white" style='height:100vh'>       
+            <div class="card-body">
+                <form class="mt-2 mb-4 py-4" method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="form-group row col-12 justify-content-center">
+                        <div class="row d-flex justify-content-center align-items-center rounded-circle " style="background:#f3f3f3;width: 8rem;height: 8rem;">
+                            <i class="fas fa-user-alt fa-4x text-white"></i>
+                        </div>
+                    </div>
             
-                        <div class="form-group ">
-                            <label for="name" class="col-form-label text-md-right">{{ __('Name') }}</label>        
-                                <div class="">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                        @error('name')
-                                           <span class="invalid-feedback" role="alert">
-                                               <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                </div>
-                         </div>      
+                    <div class="form-group ">
+                        <label for="name" class="col-form-label text-md-right">{{ __('Name') }}</label>        
+                        <div class="">
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                @error('name')
+                                   <span class="invalid-feedback" role="alert">                                               <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>      
                         <div class="form-group ">
                             <label for="lastname" class="col-form-label text-md-right">{{ __('lastname') }}</label>
             
@@ -84,7 +87,7 @@
                             <label class=" col-form-label text-md-right">     {{ __('Sign up with') }}</label>
                         </div>
 
-                        <div class=" d-flex justify-content-around">
+                        <div class=" d-flex justify-content-around ">
                             <img src="/storage/facebook.svg" alt="" style="width:2rem">
                             <img src="/storage/google.svg" alt=""style="width:2rem">
                         </div>

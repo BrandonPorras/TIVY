@@ -5,7 +5,7 @@
     {{$method}}
     @if ($button_text != 'Show Tivy')
         <div class="form-group mt-2 mb-3">
-            <input class="form-control text-primary"  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required value="{{$tivy['date']}}" >
+            <input class="form-control text-primary"  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required value="{{$tivy['tittle']}}" >
         </div>
     @endif
 
