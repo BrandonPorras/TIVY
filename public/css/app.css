@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 .btn-TivyDarkOrange {
-  color: #fff;
+  color: #fff !important;
   background-color: #F29B35 !important;
+  padding: 0.5rem 3rem 0.5rem 3rem !important;
 }
 
 .btn-initTivyDarkOrange {
