@@ -6,7 +6,11 @@
         @component('components.hero')
             
         @endcomponent
+<<<<<<< HEAD
         <div  class="p-0 col-12 col-md-4 d-flex align-items-center bg-white ">
+=======
+        <div class="p-0 col-12 col-md-4 d-flex align-items-center bg-white ">
+>>>>>>> c78b49060b22bcc6ecface4a2a7e88ba68463eff
             <div class="card col-12 border-0">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -46,9 +50,9 @@
                         </div>
 
                         <div class="form-group d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Sign in') }}
-                                </button>
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Sign in') }}
+                            </button>
                         </div>
                         <div class="form-group d-flex justify-content-center">
                                 
