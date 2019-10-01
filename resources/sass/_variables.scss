@@ -79,11 +79,20 @@ $tivyGray:#616161;
 
 .scrolling-wrapper {
     overflow-x: scroll;
+    
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: auto;
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+
+  .scrolling-wrapper-login {
+    overflow-x: scroll;
+    
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: auto;
+ 
   }
   .gradient{
     background-image: linear-gradient(to right, $tivyLightOrange ,$tivyLightBlue);

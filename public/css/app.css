@@ -61,6 +61,13 @@
   display: none;
 }
 
+.scrolling-wrapper-login {
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: auto;
+}
+
 .gradient {
   background-image: linear-gradient(to right, #F29B35, #00B7FF);
 }

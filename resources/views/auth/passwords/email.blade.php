@@ -5,7 +5,7 @@
     <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')
         @endcomponent
-        <div class="p-0 top-login rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper bg-white" style='height:100vh'>       
+        <div class="p-0 top-login rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper-login bg-white" style='height:100vh'>       
             <div class="card col-12 border-0 pt-4 mt-md-4 mt-0">
                     <div class="card-body mt-md-4 mt-0 pt-4">
                             @if (session('status'))
