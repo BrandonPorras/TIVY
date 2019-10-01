@@ -5,11 +5,7 @@
     <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')
         @endcomponent
-<<<<<<< HEAD
-        <div class="p-0 col-12 col-md-4 d-flex align-items-center bg-white scrolling-wrapper" style='height:100vh;'>
-=======
         <div class="p-0 col-12 col-md-4 d-flex align-items-center bg-white" style='height:100vh;'>
->>>>>>> c78b49060b22bcc6ecface4a2a7e88ba68463eff
             <div class="card border-0"></div>            
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
