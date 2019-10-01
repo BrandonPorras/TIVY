@@ -35,6 +35,11 @@
   background: #616161;
 }
 
+.rounded-top-login {
+  border-top-left-radius: 2.25rem !important;
+  border-top-right-radius: 2.25rem !important;
+}
+
 .scrolling-wrapper {
   overflow-x: scroll;
   -ms-scroll-snap-type: x mandatory;
@@ -108,6 +113,13 @@
 @media (max-width: 768px) {
   .img-home {
     height: 50vh;
+  }
+}
+
+@media (max-width: 576) {
+  .top-login {
+    top: 15rem;
+    position: absolute;
   }
 }
 

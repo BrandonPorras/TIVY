@@ -59,21 +59,22 @@ $tivyGray:#616161;
 }
 
 .bg-gray{
-  
   background: $tivyGray;
+}
+
+.rounded-top-login{
+  border-top-left-radius: 2.25rem !important;
+  border-top-right-radius: 2.25rem !important;
 }
 
 .scrolling-wrapper {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-
     -webkit-overflow-scrolling: auto;
     &::-webkit-scrollbar {
-        display: none;
-      }
-
+      display: none;
+    }
   }
-
   .gradient{
     background-image: linear-gradient(to right, $tivyLightOrange ,$tivyLightBlue);
   }
@@ -133,6 +134,13 @@ $tivyGray:#616161;
   {
     .img-home{
       height:50vh;
+    }
+  }
+
+  @media(max-width:576){
+    .top-login{
+      top:15rem;
+      position:absolute;
     }
   }
 

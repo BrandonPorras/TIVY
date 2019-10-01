@@ -11,6 +11,7 @@
       <strong >
         {{$name}}
       </strong>
+      <i class="fas fa-user-edit d-none d-lg-inline-block"></i>
     </h4>
     <p class="card-text px-3 pb-2 text-break text-muted">
       {{$description}}
@@ -24,6 +25,7 @@
           </strong>
         </h6>
         <h6 class="card-title pl-2 pb-2 d-block d-lg-none">
+            <i class="fas fa-user-edit text-profile"></i>
           <a href="" class="text-profile">
             @lang("Edit profile")
           </a>
