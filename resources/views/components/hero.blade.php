@@ -2,7 +2,8 @@
     <img src="/storage/tivy_hero.png" class="img-home" alt="Responsive image" >
     <div class="row position-absolute col-12 d-flex justify-content-center flex-column "> 
         <h1 class="text-light mt-1 d-none d-md-block" style="text-align:center">Welcome to</h1>
-        <img src="/storage/tivy_logo_blanco.svg" class="mt-1 text-light d-none d-md-block" alt="Responsive image" style="height:10rem;"> 
+        <img src="/storage/tivy_logo_blanco.svg" class="mt-1 text-light d-none d-md-block" alt="Responsive image" style="height:30vh;"> 
+        <img src="/storage/logo_tivy_horizontal.svg" class="mt-1 text-light d-block  d-md-none" alt="Responsive image" style="height:30vh;"> 
         <h2 class="text-light mt-1 d-none d-md-block" style="text-align:center">Create, join Tivy's, make new friends</h2>
         <h3 class="mt-1 text-light d-none d-md-block" style="text-align:center">and experiences</h3>
     </div>

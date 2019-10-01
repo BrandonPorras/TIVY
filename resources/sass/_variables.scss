@@ -34,8 +34,13 @@ $tivyGray:#616161;
 
 .btn-TivyDarkOrange{
   color: #fff;
-    background-color: $tivyLightOrange !important;
-    border-color: #3490dc;
+  background-color: $tivyLightOrange !important;  
+}
+
+.btn-initTivyDarkOrange{
+  color: #fff !important;
+  background-color: $tivyLightOrange !important;
+  padding: .5rem 3rem 0.5rem 3rem !important;  
 }
 .navy{
     background: $tivyDarkBlue;
@@ -65,6 +70,10 @@ $tivyGray:#616161;
 .rounded-top-login{
   border-top-left-radius: 2.25rem !important;
   border-top-right-radius: 2.25rem !important;
+}
+.top-login{
+  top:0rem;
+ 
 }
 
 .scrolling-wrapper {
@@ -137,10 +146,11 @@ $tivyGray:#616161;
     }
   }
 
-  @media(max-width:576){
+  @media(max-width:576px){
     .top-login{
-      top:15rem;
       position:absolute;
+      top:15rem;
+      
     }
   }
 

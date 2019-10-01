@@ -5,11 +5,18 @@
     <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')  
         @endcomponent
-        <div class="p-0 col-12 col-md-4 d-flex align-items-center bg-white ">
-            <div class="card col-12 border-0">
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+        <div class="p-0  rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper bg-white" style='height:100vh'>
+            <div class="card col-12 border-0 pt-4 mt-md-4 mt-0">
+                <div class="card-body mt-md-4 mt-0 pt-4">
+                    <form method="POST" action="{{ route('login') }}" class="mt-md-4 mt-0">
                         @csrf
+
+                        <div class="form-group row col-12 justify-content-center">
+                            <div class="row d-flex justify-content-center align-items-center rounded-circle " style="background:#f3f3f3;width: 8rem;height: 8rem;">
+                                <i class="fas fa-user-alt fa-4x text-white"></i>
+                            </div>
+                        </div>
+
                         <div class="form-group ">
                             <label for="email" class=" col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -42,8 +49,8 @@
                                 </a>
                             @endif
                         </div>
-                        <div class="form-group d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">
+                        <div class="form-group col-12 row d-flex justify-content-center">
+                            <button type="submit" class="btn btn btn-initTivyDarkOrange rounded-pill">
                                 {{ __('Sign in') }}
                             </button>
                         </div>

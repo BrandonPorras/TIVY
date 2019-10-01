@@ -3,7 +3,12 @@
 .btn-TivyDarkOrange {
   color: #fff;
   background-color: #F29B35 !important;
-  border-color: #3490dc;
+}
+
+.btn-initTivyDarkOrange {
+  color: #fff !important;
+  background-color: #F29B35 !important;
+  padding: 0.5rem 3rem 0.5rem 3rem !important;
 }
 
 .navy {
@@ -38,6 +43,10 @@
 .rounded-top-login {
   border-top-left-radius: 2.25rem !important;
   border-top-right-radius: 2.25rem !important;
+}
+
+.top-login {
+  top: 0rem;
 }
 
 .scrolling-wrapper {
@@ -116,10 +125,10 @@
   }
 }
 
-@media (max-width: 576) {
+@media (max-width: 576px) {
   .top-login {
-    top: 15rem;
     position: absolute;
+    top: 15rem;
   }
 }
 
