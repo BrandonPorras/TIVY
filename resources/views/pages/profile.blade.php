@@ -90,13 +90,8 @@
     }
 
 
-<<<<<<< HEAD
-    function changeImageEdit(input,id){      
-        let imageEdit=document.querySelector('#imgEdit-Tivy'+id)    
-=======
     function changeImageEdit(input){      
         let imageEdit=document.querySelector('#imgEdit-Tivy')    
->>>>>>> c78b49060b22bcc6ecface4a2a7e88ba68463eff
         console.log(imageEdit)  
         if (input.files && input.files[0]) {
             var reader = new FileReader();
