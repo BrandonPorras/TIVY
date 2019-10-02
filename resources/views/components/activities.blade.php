@@ -8,7 +8,7 @@
         @if($buttonCreate)
         <div class="card mb-4 border-0 mx-2" style=" flex: 0 0 40%;">
             <button type="button" data-toggle="modal" data-target="#create-dashboard" class="btn btn-transparent border border-info" style="flex:0 0 40%; ">
-                <p class="my-0" style="padding-top:22.5%;padding-bottom:22.5%">
+                <p class="my-0 text-primary" style="padding-top:22.5%;padding-bottom:22.5%">
                     @lang('Create a new Tivy')
                 </p> 
             </button>

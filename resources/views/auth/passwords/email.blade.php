@@ -7,6 +7,7 @@
         @endcomponent
         <div class="p-0 rounded-top-login col-12 col-xl-4 d-flex no-wrap scrolling-wrapper-login bg-white" style='height:100vh'>       
             <div class="card col-12 border-0 pt-4 mt-xl-4 mt-0">
+
                 <div class="card-body mt-xl-4 mt-0 pt-4">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
