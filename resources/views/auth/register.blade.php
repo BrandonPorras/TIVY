@@ -5,7 +5,7 @@
     <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')
         @endcomponent
-        <div class="p-0 rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper bg-white" style='height:100vh'>       
+        <div class="p-0 rounded-top-login   col-12 col-md-4 d-flex no-wrap scrolling-wrapper bg-white" style='height:100vh'>       
             <div class="card-body">
                 <form class="mt-2 mb-4 py-4" method="POST" action="{{ route('register') }}">
                     @csrf
