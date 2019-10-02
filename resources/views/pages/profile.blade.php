@@ -10,7 +10,7 @@
 @section('content')
     <div class="container-fluid ">
         <div class="row d-flex ">
-            <div class="col-lg-2 col-12 bg-white px-0 border-right">
+            <div class="col-lg-2 col-12 bg-white px-0 border-right pb-5">
                 <div class="row col-12 d-flex justify-content-lg-start px-0 mx-0 justify-content-around">
                      @component('components.card.profile',
                         ['img'=>'/storage/milos.png',
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-12 bg-white">
+            <div class="col-lg-5 col-12 bg-light pb-5">
                 @component('components.activities',
                 ['activityTitle'=>'My Tivys','buttonCreate'=>true,'tivies'=>$myTivies,'styleImg'=>'img-tivy-Small'])
               
@@ -51,7 +51,7 @@
                 ['activityTitle'=>'Pending Tivys','buttonCreate'=>false,'tivies'=>$pendingTivies,'styleImg'=>'img-tivy-Small'])
                 @endcomponent
             </div>
-            <div class="col-lg-5 col-12  bg-white">
+            <div class="col-lg-5 col-12  bg-light pb-5">
                 @component('components.activities',
                 ['activityTitle'=>'Upcoming Tivys','buttonCreate'=>false,'tivies'=>$upComingTivies,'styleImg'=>'img-tivy-Small'])
                 @endcomponent
@@ -101,6 +101,8 @@
             reader.readAsDataURL(input.files[0]);
         }
     };
+
+  
 </script>
 
 

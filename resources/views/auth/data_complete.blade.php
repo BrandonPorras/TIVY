@@ -2,18 +2,21 @@
 
 @section('content')
 <div class="container-fluid m-0 p-0">
-    <div class=" d-flex flex-xl-row flex-lg-row flex-md-row flex-column">
+    <div class=" d-flex flex-xl-row  flex-column">
         @component('components.hero')
         @endcomponent
-        <div class="p-0  rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper-login bg-white" style='height:100vh'>
-            <div class="card col-12 border-0 pt-4 mt-md-4 mt-0">
-                <div class="card-body mt-md-4 mt-0 pt-4">
-                    <form method="POST" action="{{ url('/complete/' .$id) }}">
+        <div class="p-0  rounded-top-login col-12 col-xl-4 d-flex no-wrap scrolling-wrapper-login bg-white" style='height:100vh'>
+            <div class="card col-12 border-0 pt-4 mt-xl-4 mt-0">
+                <div class="card-body mt-xl-4 mt-0 pt-4">
+                    <form method="POST" action="{{ url('/complete/' .$id) }}" class="px-4">
                         @csrf    
                         <div class="form-group row col-12 justify-content-center">
                             <div class="row d-flex justify-content-center align-items-center rounded-circle " style="background:#f3f3f3;width: 8rem;height: 8rem;">
                                 <i class="fas fa-user-alt fa-4x text-white"></i>
                             </div>
+                        </div>
+                        <div class="form-group row col-12 justify-content-center ">
+                            <h2>@lang('Recover password')</h2>
                         </div>
                         <div class="form-group ">
                             <label for="password" class=" col-form-label text-md-right">{{ __('Password') }}</label>
@@ -33,13 +36,11 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-            
-                        <div class="form-group row col-12 justify-content-center">
-                         
-                            <button type="submit" class="btn btn-initTivyDarkOrange rounded-pill">
-                                {{ __('Register password') }}
-                            </button>
-                          
+    
+                        <div class="form-group  mb-0 row col-12 justify-content-center px-0 mx-0">                   
+                            <button type="submit" class="btn col-12 col-xl-8 btn-initTivyDarkOrange rounded-pill py-2">
+                                <h4 class="">{{ __('Register Password') }}</h4>
+                            </button> 
                         </div>
                     </form>
                 </div>                

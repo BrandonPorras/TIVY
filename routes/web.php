@@ -22,9 +22,6 @@ Route::get('/profile',function(){
     return view("pages.profile");}
 );
 
-
-
-
 Route::get('/profile/{user}', 'UserController@show')->name('user.show');
 
 Route::get('/respuesta', function(){

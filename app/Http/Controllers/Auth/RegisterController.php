@@ -68,7 +68,8 @@ function generarCodigo($longitud) {
             'lastname' => ['required', 'string', 'max:255'],            
             'fecha'=>['required','date',"before:$fecha"],    
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'termsConditions'=>['required']
+            'termsConditions'=>['required'],
+           
            
         ]);
     }
@@ -93,7 +94,7 @@ function generarCodigo($longitud) {
             'lastname'=>$data['lastname'],
             'fecha'=>$data['fecha'],
             'codigo' =>$codigo,
-            
+         
         ]);
     }
 
