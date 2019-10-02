@@ -1,9 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 .btn-TivyDarkOrange {
-  color: #fff;
+  color: #fff !important;
   background-color: #F29B35 !important;
-  border-color: #3490dc;
+  padding: 0.5rem 3rem 0.5rem 3rem !important;
+}
+
+.btn-initTivyDarkOrange {
+  color: #fff !important;
+  background-color: #F29B35 !important;
+  padding: 0.5rem 3rem 0.5rem 3rem !important;
 }
 
 .navy {
@@ -40,6 +46,10 @@
   border-top-right-radius: 2.25rem !important;
 }
 
+.top-login {
+  top: 0rem;
+}
+
 .scrolling-wrapper {
   overflow-x: scroll;
   -ms-scroll-snap-type: x mandatory;
@@ -49,6 +59,13 @@
 
 .scrolling-wrapper::-webkit-scrollbar {
   display: none;
+}
+
+.scrolling-wrapper-login {
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: auto;
 }
 
 .gradient {
@@ -116,10 +133,10 @@
   }
 }
 
-@media (max-width: 576) {
+@media (max-width: 576px) {
   .top-login {
-    top: 15rem;
     position: absolute;
+    top: 15rem;
   }
 }
 

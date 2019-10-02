@@ -33,9 +33,15 @@ $tivyGray:#616161;
 // class
 
 .btn-TivyDarkOrange{
-  color: #fff;
-    background-color: $tivyLightOrange !important;
-    border-color: #3490dc;
+  color: #fff !important;
+  background-color: $tivyLightOrange !important;  
+  padding: .5rem 3rem 0.5rem 3rem !important;
+}
+
+.btn-initTivyDarkOrange{
+  color: #fff !important;
+  background-color: $tivyLightOrange !important;
+  padding: .5rem 3rem 0.5rem 3rem !important;  
 }
 .navy{
     background: $tivyDarkBlue;
@@ -66,14 +72,27 @@ $tivyGray:#616161;
   border-top-left-radius: 2.25rem !important;
   border-top-right-radius: 2.25rem !important;
 }
+.top-login{
+  top:0rem;
+ 
+}
 
 .scrolling-wrapper {
     overflow-x: scroll;
+    
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: auto;
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+
+  .scrolling-wrapper-login {
+    overflow-x: scroll;
+    
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: auto;
+ 
   }
   .gradient{
     background-image: linear-gradient(to right, $tivyLightOrange ,$tivyLightBlue);
@@ -137,10 +156,11 @@ $tivyGray:#616161;
     }
   }
 
-  @media(max-width:576){
+  @media(max-width:576px){
     .top-login{
-      top:15rem;
       position:absolute;
+      top:15rem;
+      
     }
   }
 

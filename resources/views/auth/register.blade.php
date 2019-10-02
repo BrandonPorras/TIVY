@@ -5,7 +5,7 @@
     <div class=" d-flex flex-md-row  flex-column">
         @component('components.hero')
         @endcomponent
-        <div class="p-0 rounded-top-login   col-12 col-md-4 d-flex no-wrap scrolling-wrapper bg-white" style='height:100vh'>       
+        <div class="p-0 top-login rounded-top-login  col-12 col-md-4 d-flex no-wrap scrolling-wrapper-login bg-white" style='height:100vh'>       
             <div class="card-body">
                 <form class="mt-2 mb-4 py-4" method="POST" action="{{ route('register') }}">
                     @csrf
@@ -61,7 +61,7 @@
                             </div>
                         </div>
             
-                        <div class="form-group row d-flex justify-content-around">
+                        <div class="form-group row d-flex justify-content-start mx-4">
                             <div class="form-check p-0 m-0">
                                 <input type="checkbox" class="form-check-input  @error('termsConditions') is-invalid @enderror "  name="termsConditions" id="termsConditions" value="1">
                                 <label class="form-check-label" for="termsConditions">                                                
@@ -75,12 +75,12 @@
                             </div>
                         </div>
                         
-                        <div class="form-group  mb-0">
-                            <div class="offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group  mb-0 row col-12 justify-content-center">
+                           
+                                <button type="submit" class="btn btn-initTivyDarkOrange rounded-pill">
                                     {{ __('Sign up') }}
                                     </button>
-                                </div>
+                               
                             </div>
 
                          <div class="form-group  mb-0">
