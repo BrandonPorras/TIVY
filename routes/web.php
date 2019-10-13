@@ -22,6 +22,9 @@ Route::get('/profile',function(){
     return view("pages.profile");}
 );
 
+
+
+
 Route::get('/profile/{user}', 'UserController@show')->name('user.show');
 
 Route::get('/respuesta', function(){
@@ -36,4 +39,5 @@ Route::post('complete/{id}','UserController@complete')->name('complete');
 Route::resource('tivy','TivyController')->except(['update']);
 Route::put('tivy/{id}','TivyController@update')->name('tivy.update');
 
-//e
+Route::get('showAuthorize','TivyController@showAuthorize')->name('tivy.showAuthorize');//->middleware('auth','role:admin');
+Route::put('allow/{id}', 'TivyController@allow')->name('tivy.allow');
