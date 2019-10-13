@@ -35,3 +35,5 @@ Route::post('complete/{id}','UserController@complete')->name('complete');
 
 Route::resource('tivy','TivyController')->except(['update']);
 Route::put('tivy/{id}','TivyController@update')->name('tivy.update');
+
+//e
