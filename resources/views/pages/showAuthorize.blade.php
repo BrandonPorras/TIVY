@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@section('header')
+@component('components.header')
+@endcomponent 
+@endsection
 @section('content')
 <div class="container ml-5">
  <table class="table table-responsive table-hover ">
@@ -63,4 +66,9 @@
     </tbody>
 </table> 
 </div>
+@endsection
+
+@section('footer')
+@component('components.footer')
+@endcomponent 
 @endsection
