@@ -1,74 +1,64 @@
 @extends('layouts.app')
 @section('header')
-@component('components.header')
-@endcomponent 
+    @component('components.header')
+    @endcomponent 
 @endsection
 @section('content')
-<div class="container ml-5">
- <table class="table table-responsive table-hover ">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Autor</th>
-            <th>Image</th>
-            
-            <th>Authorize or Deny</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php 
-        use TIVY\Tivy;
-        use TIVY\User;
-        $tivies= Tivy::all();
-        $users= User::all();
-      ?>
-    @forelse($tivies as $tivy){{--forelse publication--}}
-        @if($tivy->state==1)
-         @forelse($users as $user)
-            @if($tivy->user_id==$user->id)
-                   <tr>
-                    <td>{{ $tivy->tittle }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td><div class="card card-img">
-                        <img  class=""  width='100%'src="{{ url('storage/tivy/'.$tivy->img) }}" alt="" ></td>
-                {{--forelse publication--}}
-                         </div>
-                        <td class="">
-                                <p>{{ $tivy->tittle }}</p> 
-                            </td>      
-
-                            <td>
-                                <form method="POST" action="{{ route('tivy.allow',$tivy->id) }}">
-                                    @csrf
-                                    @method('PUT')
-                                    <button class="btn  btn-success"type="submit">@lang('Athorize')</button>
-                                </form>
-                            </td>
-                            
-                            <td>
-                                <form method="POST" action="{{ route('tivy.destroy', $tivy) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn  btn-primary"type="submit">@lang('Deny')</button>
-                                </form>
-                            </td>
-                            
-                      @endif
-                    </tr>
-                    @empty
-                    <p>No hay tivies pendientes</p>
-              @endforelse{{--endforelse user--}}
-              @endif
-             @empty
-                <p>No hay tivies</p>
-          
-    @endforelse{{--endforelse publication--}}
-    </tbody>
-</table> 
-</div>
+    <div class="container-fluid px-0 ">
+        <div class="row">
+            <div class="col-lg-2 col-12 bg-white px-0 border-right pb-5">
+                <div class="row col-12 d-flex justify-content-lg-start px-0 mx-0 justify-content-around">
+                    <div class="col-12 px-0">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-authorizeTivy-list" data-toggle="list" href="#list-authorizeTivy" role="tab" aria-controls="authorizeTivy">@lang("Authorize Tivy's")</a>
+                            <a class="list-group-item list-group-item-action" id="list-manageUser-list" data-toggle="list" href="#list-manageUser" role="tab" aria-controls="manageUser">@lang("Manage Users")</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-12 bg-light pb-5">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-authorizeTivy" role="tabpanel" aria-labelledby="list-authorizeTivy-list">
+                                @component('components.table.authorize')
+                                    @slot('header')
+                                        @component('components.table.header',['data'=>['title','author','image','authorize','deny']])
+                                        @endcomponent
+                                    @endsloT
+                                    @slot('information')
+                                        @foreach ($unauthorizeTivies as $tivy)
+                                            @component('components.table.data',['manageUser'=>false,'data'=>[$tivy->tittle,$tivy->name,$tivy->img],'tivyId'=>$tivy->id])
+                                            @endcomponent
+                                        @endforeach
+                                    @endslot
+                                @endcomponent
+                            </div>
+                            <div class="tab-pane fade" id="list-manageUser" role="tabpanel" aria-labelledby="list-manageUser-list">
+                                @component('components.table.authorize')  
+                                    @slot('header')
+                                        @component('components.table.header',['data'=>['username','user description','email','profile photo','aprove','deactivate','delete']])
+                                        @endcomponent
+                                    @endslot
+                                    @slot('information')
+                                        @foreach ($unauthorizeTivies as $tivy)
+                                            @component('components.table.data',['manageUser'=>true,'data'=>['name','user description','email','profile photo'],'tivyId'=>3])
+                                            @endcomponent 
+                                        @endforeach
+                                    @endslot   
+                                @endcomponent   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('footer')
-@component('components.footer')
-@endcomponent 
+    @component('components.footer')
+    @endcomponent 
 @endsection
+
+

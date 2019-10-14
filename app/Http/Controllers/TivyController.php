@@ -8,6 +8,7 @@ use TIVY\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Validator;
 use Redirect;
+use Illuminate\Support\Facades\DB;
 
 class TivyController extends Controller
 {
@@ -179,11 +180,8 @@ class TivyController extends Controller
 
     public function showAuthorize()
     {
-        $tivies[] = Tivy::all();
-        $users []= User::all();    
-
-       
-        return view('pages.showAuthorize');        
+        $unauthorizeTivies=DB::table('tivies')->join('users', 'tivies.user_id', '=', 'users.id')->select('tivies.id','tivies.tittle','tivies.img','users.id as user_id','users.name')->get();    
+        return view('pages.showAuthorize',['unauthorizeTivies'=>$unauthorizeTivies]);        
     }
 
     public function allow($id )
