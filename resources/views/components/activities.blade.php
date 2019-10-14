@@ -17,14 +17,53 @@
         @forelse($tivies as $tivy)
             @if($tivy->user_id== Auth::user()->id)
                 @component('components.card.activity',['tivy'=>$tivy,'styleImg'=>$styleImg]))
-                @endcomponent  
-                @component('components.dashboard.tivy.show',['tivy'=>$tivy])
                 @endcomponent
-                @component('components.dashboard.tivy.edit',['tivy'=>$tivy,'user'=>Auth::user()]))
-                @endcomponent  
+
+                @component('components.dashboard.tivy',['idDashboard'=>'tivy-'.$tivy->id])
+                    @slot('header')
+                        @component('components.dashboard.header.tivy',['btn_header'=>'btn_showTivy','image_id'=>'','tivy'=>$tivy])      
+                        @endcomponent    
+                    @endslot
+                    @slot('content')
+                        @component('components.form.calification')
+                        @endcomponent
+                        @component('components.form.tivy',['tivy'=>$tivy,'button_text'=>'Show Tivy','disable'=>"disabled",'changeImg'=>'']) 
+                            @slot('method')
+                                @method('POST')
+                            @endslot
+                            @slot('route')
+                                {{""}} 
+                            @endslot
+                            @slot('btn_id')
+                                @lang('btn_showTivy')
+                            @endslot
+                        @endcomponent
+                        @component('components.form.comment')
+                        @endcomponent
+                    @endslot
+                @endcomponent
+
+                @component('components.dashboard.tivy',['idDashboard'=>'tivyEdit-'.$tivy->id])
+                    @slot('header')
+                        @component('components.dashboard.header.tivy',['btn_header'=>'btn_editTivy-'.$tivy->id,'image_id'=>'imgEdit-Tivy-'.$tivy->id,'tivy'=>$tivy])      
+                        @endcomponent    
+                    @endslot
+                    @slot('content')
+                        @component('components.form.tivy',['tivy'=>$tivy,'button_text'=>'Edit Tivy','disable'=>"enable",'changeImg'=>'changeImageEdit(this,'.$tivy->id.')']) 
+                            @slot('method')
+                                @method('PUT')
+                            @endslot
+                            @slot('route')
+                                {{route('tivy.update',$tivy['id'])}} 
+                            @endslot
+                            @slot('btn_id')
+                                {{'btn_editTivy-'.$tivy->id}}
+                            @endslot
+                        @endcomponent
+                    @endslot
+                @endcomponent                
             @endif
             @empty
         @endforelse        
     </div>
 </div>
-

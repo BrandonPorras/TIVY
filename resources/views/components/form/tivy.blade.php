@@ -87,7 +87,7 @@
         </div>
     </div>
     <div class="d-none">
-    <input class="" style="" onchange="{{$changeImg}}" id="{{$btn_id}}" name="btn_file" type="file" >
+        <input class="" style="" onchange="{{$changeImg}}" id="{{$btn_id}}" name="btn_file" type="file" >
     </div>
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
     @if ($button_text != 'Show Tivy')

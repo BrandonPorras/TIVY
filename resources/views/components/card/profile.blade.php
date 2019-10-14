@@ -11,7 +11,9 @@
       <strong >
         {{$name}}
       </strong>
-      <i class="fas fa-user-edit d-none d-lg-inline-block"></i>
+      <label for="modal-profile">
+        <i class="fas fa-user-edit d-none d-lg-inline-block"></i>
+      </label>
     </h4>
     <p class="card-text px-3 pb-2 text-break text-muted">
       {{$description}}

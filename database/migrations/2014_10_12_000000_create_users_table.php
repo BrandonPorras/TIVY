@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastname');            
             $table->string('email')->unique();           
             $table->string('password')->nullable();
+            $table->longText('description');
             $table->string('imagen')->default('img/default.jpg');
             $table->date('fecha')->nullable();
             //codigo para identificar al usuario se utiliza en la confirmación
