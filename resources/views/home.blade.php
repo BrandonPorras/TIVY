@@ -33,6 +33,8 @@
                         <a href="{{ route('tivy.showAuthorize') }}" class="btn btn-primary">Authorize or deny publications</a>
                         {{-- <a href="{{ route('user.manageUser') }}" class="btn btn-success">Manage users</a> --}}
                        </div>
+
+                       <a href="{{ route('user.manageUser') }}" class="btn btn-success">Manage users</a>
                         @endif
                      
                         @endforeach 

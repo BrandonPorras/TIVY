@@ -4,6 +4,7 @@ namespace TIVY\Http\Controllers;
 
 use Illuminate\Http\Request;
 use TIVY\User;
+use TIVY\Role;
 use Redirect;
 USE TIVY\Tivy;
 
@@ -44,8 +45,7 @@ class UserController extends Controller
     
 
     public function edit($id)
-    {        $user=User::findOrFail($id);  
-        return view('user.edit',['user' => $user]);
+    {        
     }
 
     public function update(Request $request, $id)
@@ -59,7 +59,7 @@ class UserController extends Controller
 
           if ($request->hasFile('img')) {
             // Eliminar imagen si  se va a actualizar
-            $filePath = storage_path('app/public/storage/' . $user->img);
+            $filePath = storage_path('app/public/user/' . $user->img);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
@@ -105,4 +105,62 @@ class UserController extends Controller
         $user->save();
         return redirect::to('/login');
     }
+
+    public function manageUser(){
+        
+        $users=User::all();
+       // $roles = Role::all();
+      //  foreach ($users->roles as $role) {
+           // dd($role->pivot->user_id);
+       // }      
+       
+       $roles=Role::all();
+        
+        
+   
+        return view('pages.manageUser', compact('users','roles') );        
+    }
+
+    public function updateRole( $id,$roleId){ 
+     $user=User::findOrFail($id);    
+    $role= Role::findOrFail($roleId);
+    
+    if($roleId===1){
+        $user
+        ->roles()
+        ->detach(Role::where('name', 'admin')->first());
+
+         $user
+        ->roles()
+        ->attach(Role::where('name', 'admin')->first());
+
+        $user->save();
+    }
+        elseif($roleId===2){
+            $user
+            ->roles()
+            ->detach(Role::where('name', 'user')->first());
+    
+             $user
+            ->roles()
+            ->attach(Role::where('name', 'user')->first());
+    
+            $user->save();            
+        }
+        return redirect()->route('home');
+    }
+
+
+    public function EditState($id,Request $request){
+
+        $user=User::findorfail($id)->first();
+//estado 0 inhabilitado
+//estado 1 habulitado
+//estado 2 suspendido        
+            $user->state=$request->state; 
+            $user->save(); 
+            return redirect()->route('home'); 
+        
+}
+
 }

@@ -3,6 +3,7 @@
 namespace TIVY\Http\Controllers\Auth;
 
 use TIVY\User;
+use TIVY\Role;
 use TIVY\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -88,7 +89,8 @@ function generarCodigo($longitud) {
 
         $this->email($datos,$data['email']);
 
-        return User::create([
+
+        $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'lastname'=>$data['lastname'],
@@ -96,6 +98,12 @@ function generarCodigo($longitud) {
             'codigo' =>$codigo,
          
         ]);
+
+        $user
+        ->roles()
+        ->attach(Role::where('name', 'user')->first());
+
+        return $user;
     }
 
     function email($datos,$email){

@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             //se utiliza para saber si el usuario esta activo o no 
             //0 para activo 1 para inactivo
             $table->integer('activo')->default(0);
+            $table->integer('state')->default(0);
             $table->rememberToken();
             $table->timestamps();
             
