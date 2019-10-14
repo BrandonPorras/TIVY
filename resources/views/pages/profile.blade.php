@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    @component('components.menu.menu')
+    @component('components.menu.menu',['img'=>Auth::user()->imagen])
     @endcomponent 
 
     @component('components.dashboard.profile', ['idDashboard'=>'profile-dashboard'])
@@ -76,7 +76,8 @@
         @slot('content')
             @component('components.form.profile',    
             [
-            'name'=>(Auth::user()->name).' '.Auth::user()->lastname,
+            'name'=>Auth::user()->name,
+            'lastname'=>Auth::user()->lastname,
             'description'=>Auth::user()->description,
             'email'=>Auth::user()->email,
             'facebook'=>(Auth::user()->name).' '.Auth::user()->lastname,
@@ -141,6 +142,19 @@
             var reader = new FileReader();
             reader.onload = function (e) {
                 imageEdit.src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+
+    
+    function changeImageProfile(input){      
+        let imageProfile=document.querySelector('#imgProfile')    
+        console.log(imageProfile)  
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                imageProfile.src = e.target.result;
             }
             reader.readAsDataURL(input.files[0]);
         }
