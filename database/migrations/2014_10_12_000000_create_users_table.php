@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('lastname');            
             $table->string('email')->unique();           
             $table->string('password')->nullable();
-            $table->longText('description');
             $table->string('imagen')->default('img/default.jpg');
             $table->date('fecha')->nullable();
             //codigo para identificar al usuario se utiliza en la confirmación
@@ -27,6 +26,7 @@ class CreateUsersTable extends Migration
             //se utiliza para saber si el usuario esta activo o no 
             //0 para activo 1 para inactivo
             $table->integer('activo')->default(0);
+            $table->integer('state')->default(0);
             $table->rememberToken();
             $table->timestamps();
             
