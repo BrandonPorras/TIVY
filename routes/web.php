@@ -43,5 +43,7 @@ Route::get('showAuthorize','TivyController@showAuthorize')->name('tivy.showAutho
 Route::put('allow/{id}', 'TivyController@allow')->name('tivy.allow');
 
 Route::get('manageUser', 'UserController@manageUser')->name('user.manageUser');
-Route::put('/updateRole/{id}/{name}','UserController@updateRole')->name('user.updateRole');
 
+Route::put('/editState/{id}', 'UserController@editState')->name('user.editState');
+Route::put('/updateRole/{id}/{name}','UserController@updateRole')->name('user.updateRole');
+Route::delete('/user/delete/{user}','UserController@destroy')->name('user.destroy');

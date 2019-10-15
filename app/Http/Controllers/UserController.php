@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        $filePath = storage_path('app/public/storage' . $user->img);
+        $filePath = storage_path('app/public/user' . $user->img);
 
         if (file_exists($filePath)) {
             unlink($filePath);
