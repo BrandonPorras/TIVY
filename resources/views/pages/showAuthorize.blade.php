@@ -41,8 +41,8 @@
                                         @endcomponent
                                     @endslot
                                     @slot('information')
-                                        @foreach ($unauthorizeTivies as $tivy)
-                                            @component('components.table.data',['manageUser'=>true,'data'=>['name','user description','email','profile photo'],'tivyId'=>3])
+                                        @foreach ($users as $user)
+                                            @component('components.table.data',['manageUser'=>true,'data'=>[$user->name,$user->description,$user->email,$user->imagen],'tivyId'=>3])
                                             @endcomponent 
                                         @endforeach
                                     @endslot   
