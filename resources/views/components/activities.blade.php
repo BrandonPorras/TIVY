@@ -1,4 +1,4 @@
-<div class="row px-4 py-1">
+<div class="row px-4 py-1" style="{{ $activityTitle === "Upcoming Tivys"&&$tivies==null ? "margin-bottom:25%;" : "" }} {{ $activityTitle === "Tivys I've gone to"&&$tivies==null ? "margin-bottom:25%;" : "" }}">
     <div class="row col-12">
         <h4 class="my-3">
             <Strong>@lang($activityTitle)</Strong>
@@ -8,9 +8,9 @@
         @if($buttonCreate)
         <div class="card mb-4 border-0 mx-2" style=" flex: 0 0 40%;">
             <button type="button" data-toggle="modal" data-target="#create-dashboard" class="btn btn-transparent border border-info" style="flex:0 0 40%; ">
-                <p class="my-0" style="padding-top:22.5%;padding-bottom:22.5%">
+                <p class="my-0 text-primary" style="padding-top:22.5%;padding-bottom:22.5%">
                     @lang('Create a new Tivy')
-                </p>
+                </p> 
             </button>
         </div>
         @endif

@@ -177,5 +177,28 @@ class TivyController extends Controller
     }
 
 
+    public function showAuthorize()
+    {
+        $tivies[] = Tivy::all();
+        $users []= User::all();    
+
+       
+        return view('pages.showAuthorize');        
+    }
+
+    public function allow($id )
+    {   
+        $tivy = tivy::findOrFail($id);
+        // $publication->img = $request->img; 
+        // $publication->titulo = $request->titulo;
+        // $publication->text = $request->text;
+        $tivy->state ="2";    
+        $tivy->save();
+
+        //////
+        
+        return view('pages.showAuthorize');  
+        /////
+   }
     
 }

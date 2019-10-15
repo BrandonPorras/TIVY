@@ -2,6 +2,7 @@
 
 namespace TIVY;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,5 +41,12 @@ class User extends Authenticatable
 
     public function tivies(){
         return $this->hasMany('\TIVY\Tivy');
+        }
+
+        public function roles()
+        {
+            return $this
+                ->belongsToMany('TIVY\Role')
+                ->withTimestamps();
         }
 }

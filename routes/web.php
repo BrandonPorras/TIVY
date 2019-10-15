@@ -38,3 +38,6 @@ Route::post('complete/{id}','UserController@complete')->name('complete');
 
 Route::resource('tivy','TivyController')->except(['update']);
 Route::put('tivy/{id}','TivyController@update')->name('tivy.update');
+
+Route::get('showAuthorize','TivyController@showAuthorize')->name('tivy.showAuthorize');//->middleware('auth','role:admin');
+Route::put('allow/{id}', 'TivyController@allow')->name('tivy.allow');

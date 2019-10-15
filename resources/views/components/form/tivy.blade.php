@@ -5,7 +5,7 @@
     {{$method}}
     @if ($button_text != 'Show Tivy')
         <div class="form-group mt-2 mb-3">
-            <input class="form-control text-primary"  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required value="{{$tivy['tittle']}}" >
+            <input class="form-control text-primary"  type="text" name="tittle" id="tittle" placeholder="@lang('Title')" required value="{{$tivy['tittle']}}" style="font-size:2rem" >
         </div>
     @endif
 
@@ -19,10 +19,10 @@
                 @lang('date')
             </label>   
             <div class="row">
-                <label for="inputPassword" class="col-sm-1 col-form-label">
+                <label for="inputPassword" class="col-1 col-form-label">
                     <i class="text-primary fas fa-calendar-minus fa-2x"></i>
                 </label>
-                <div class="col-sm-10">
+                <div class="col-lg-10 col-11">
                     <input class="form-control"  type="date" name="date" id="date" required {{$disable}} value="{{$tivy['date']}}">
                 </div>
             </div>
@@ -31,10 +31,10 @@
         <div class="form-group col-12 col-lg-4 px-0 mx-0">
             <label for="">@lang('place')</label>  
             <div class="row">
-                <label for="inputPassword" class="col-sm-1 col-form-label">
+                <label for="inputPassword" class="col-1 col-form-label">
                     <i class="text-primary fas fa-map-marker-alt fa-2x"></i>
                 </label>
-                <div class="col-sm-10">
+                <div class="col-lg-10 col-11">
                     <input class="form-control" type="text" name="place" id="place" required placeholder="Parque, Esparza, Puntarenas" {{$disable}} value="{{$tivy['place']}}">
                 </div>
             </div>                
@@ -43,10 +43,10 @@
         <div class="form-group col-12 col-lg-3 px-0 mx-0">
             <label for="">@lang('startTime')</label>
             <div class="row ">
-                <label for="inputPassword" class="col-sm-1 col-form-label">
+                <label for="inputPassword" class="col-1 col-form-label">
                     <i class="text-primary far fa-clock fa-2x"></i>
                 </label>
-                <div class="col-lg-9 col-sm-10 ml-2">
+                <div class="col-lg-10 col-11 ml-lg-1 ml-0">
                     <input class="form-control"  type="time" name="startTime" id="startTime" required {{$disable}} value="{{$tivy['startTime']}}">
                 </div>
             </div>               
@@ -57,10 +57,10 @@
         <div class="form-group col-12 col-lg-4 px-0 ml-0 mr-lg-4 mr-0">
             <label for="">@lang('duration')</label>  
             <div class="row ">
-                <label for="inputPassword" class="col-sm-1 col-form-label">
+                <label for="inputPassword" class="col-1 col-form-label">
                     <i class="text-primary fas fa-hourglass-half fa-2x"></i>
                 </label>
-                <div class="col-sm-10 ">
+                <div class="col-lg-10 col-11">
                     <input class="form-control"  type="time" name="duration" id="duration" required {{$disable}} value="{{$tivy['duration']}}">
                 </div>
             </div>
@@ -68,20 +68,20 @@
         <div class="form-group col-12 col-lg-4 px-0 mx-0">
             <label for="">@lang('capacity')</label>   
             <div class="row ">
-                <label for="inputPassword" class="col-sm-1 col-form-label ">
-                    <i class="text-primary fas fa-user-friends fa-x"></i>
+                <label for="inputPassword" class="col-1 col-form-label px-0 pl-2">
+                    <i class="text-primary fas fa-user-friends fa-2x"></i>
                 </label>
-                <div class="col-sm-10 ">
+                <div class="col-lg-10 col-11 ml-lg-3 ml-0">
                     <input class="form-control"  type="number" name="capacity" id="capacity"  required {{$disable}} value="{{$tivy['capacity']}}">
                 </div>
             </div>
         </div>
 
-        <div class="form-group col-12">
+        <div class="form-group col-12 px-0 mx-0">
             <label for="">@lang('tag')</label>   
-            <div class="d-flex flex-nowrap flex-lg-wrap pl-2 scrolling-wrapper">         
-                <button type="button" data-toggle="modal" data-target="#edit-dashboard" class=" py-0 px-0 border border-primary bg-transparent rounded-circle" style="flex:0 0 5%; ">
-                    <p class="my-0 mx-0"style="padding-top:30%;padding-bottom:30%">+</p>
+            <div class="d-flex row col-12 py-0 px-0 mx-0 scrolling-wrapper">         
+                <button type="button" data-toggle="modal" data-target="#edit-dashboard" class=" py-0 px-0 border border-primary bg-transparent rounded-circle" style="width:4rem;height:4rem; ">
+                    +
                 </button>  
             </div>
         </div>
@@ -92,7 +92,7 @@
     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">                            
     @if ($button_text != 'Show Tivy')
         <div class="row col-12 d-flex justify-content-center">
-            <button type="submit" class="btn btn-TivyDarkOrange px-4 rounded-pill">@lang($button_text)</button>
+            <button type="submit" class="btn col-5 btn-TivyDarkOrange px-4 rounded-pill">@lang($button_text)</button>
         </div>
     @endif
 </form>
