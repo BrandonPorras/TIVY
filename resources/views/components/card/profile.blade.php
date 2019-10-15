@@ -27,10 +27,10 @@
           </strong>
         </h6>
         <h6 class="card-title pl-2 pb-2 d-block d-lg-none">
-            <i class="fas fa-user-edit text-profile"></i>
-          <a href="" class="text-profile">
+          <label for="modal-profile"><i class="fas fa-user-edit text-profile"></i></label>
+          <label for="modal-profile" class="text-profile">
             @lang("Edit profile")
-          </a>
+          </label>
         </h6>
       </div>  
         

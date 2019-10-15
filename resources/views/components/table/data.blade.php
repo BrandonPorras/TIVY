@@ -1,4 +1,5 @@
-@forelse ($data as $datum)
+<tr>
+    @forelse ($data as $datum)
     @if (strpos($datum, '.jpg') !== false )
         <td> 
             <img src={{'/storage/tivy/'.$datum}} alt="" class="" style="height:3em;">
@@ -27,6 +28,7 @@
         <i class="fas fa-times-circle fa-3x"></i>
     </label>
 </td>
+</tr>
 
 <form method="POST" action="{{ route('tivy.allow',$tivyId) }}">
     @csrf

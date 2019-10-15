@@ -179,9 +179,16 @@ class TivyController extends Controller
 
 
     public function showAuthorize()
-    {
-        $unauthorizeTivies=DB::table('tivies')->join('users', 'tivies.user_id', '=', 'users.id')->select('tivies.id','tivies.tittle','tivies.img','users.id as user_id','users.name')->get();    
-        return view('pages.showAuthorize',['unauthorizeTivies'=>$unauthorizeTivies]);        
+    {   $users=DB::table('users')
+        ->join('role_user','users.id','=','role_user.user_id')
+        ->join('roles','role_user.role_id','=','roles.id')
+        ->select('users.*','roles.role',)
+        ->get(); 
+        user::all();
+        $unauthorizeTivies=DB::table('tivies')->
+        join('users', 'tivies.user_id', '=', 'users.id')->
+        select('tivies.id','tivies.tittle','tivies.img','users.id as user_id','users.name')->get();    
+        return view('pages.showAuthorize',['unauthorizeTivies'=>$unauthorizeTivies,'users'=>$users]);        
     }
 
     public function allow($id )
