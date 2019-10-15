@@ -53,15 +53,18 @@ $roles= Role::all();
                                     @endforeach</td>
 
                                 </td>
+
                                 <td>
+                                       
                                     @if($user->state ===1)
                                     <div class="row">
+                                       
                                     <form method="POST" action="{{route('user.editState',$user->id)}}">
                                         @csrf
                                         @method('PUT')                                                    
                                         <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">   
                                     
-                                        <button id="state" name="state" value=2 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Suspendido</button>
+                                        <button  name="state" value=2 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Suspendido</button>
                                    </form> 
 
                                    <form  method="POST" action="{{route('user.editState',$user->id)}}">
@@ -69,7 +72,7 @@ $roles= Role::all();
                                     @method('PUT')                                                    
                                     <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">   
                               
-                                    <button id="state" name="state" value=0 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Inactivo</button>
+                                    <button  name="state" value=0 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Inactivo</button>
                                  </form>
                                 </div>
                                     @elseif($user->state ===2)
@@ -79,7 +82,7 @@ $roles= Role::all();
                                         @method('PUT')                                                    
                                         <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">   
                                   
-                                        <button id="state" name="state" value=1 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Activo</button>
+                                        <button  name="state" value=1 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Activo</button>
                                      </form> 
 
                                      <form  method="POST" action="{{route('user.editState',$user->id)}}">
@@ -87,7 +90,7 @@ $roles= Role::all();
                                         @method('PUT')                                                    
                                         <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">   
                                   
-                                        <button id="state" name="state" value=0 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Inactivo</button>
+                                        <button  name="state" value=0 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Inactivo</button>
                                      </form> 
                                     </div>
                                     @elseif($user->state ===0)
@@ -98,13 +101,13 @@ $roles= Role::all();
                                         @method('PUT')                                                    
                                         <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">   
                                    
-                                        <button id="state" name="state" value=0 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Inactivo</button>
+                                        <button  name="state" value=2 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Suspendido</button>
                                      </form> 
                                     <form method="POST" action="{{route('user.editState',$user->id)}}">
                                         @csrf
                                         @method('PUT')     
                                         <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">   
-                                       <button  id="state" name="state" value=1 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Activo</button>
+                                       <button   name="state" value=1 class="mx-2 btn  btn-outline-success mt-1 mb-1"type="submit">Activo</button>
                                      </form> 
                                 </div>
                                      @endif 

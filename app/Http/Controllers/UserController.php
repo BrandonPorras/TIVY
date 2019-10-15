@@ -153,7 +153,10 @@ class UserController extends Controller
 
     public function EditState($id,Request $request){
 
-        $user=User::findorfail($id)->first();
+          
+        $user=User::findorfail($id);
+
+
 //estado 0 inhabilitado
 //estado 1 habulitado
 //estado 2 suspendido        
