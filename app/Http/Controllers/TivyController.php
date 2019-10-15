@@ -182,12 +182,12 @@ class TivyController extends Controller
     {   $users=DB::table('users')
         ->join('role_user','users.id','=','role_user.user_id')
         ->join('roles','role_user.role_id','=','roles.id')
-        ->select('users.*','roles.role',)
+        ->select('users.*','roles.name as role_user','roles.description as description_role')
         ->get(); 
-        user::all();
-        $unauthorizeTivies=DB::table('tivies')->
-        join('users', 'tivies.user_id', '=', 'users.id')->
-        select('tivies.id','tivies.tittle','tivies.img','users.id as user_id','users.name')->get();    
+        $unauthorizeTivies=DB::table('tivies')
+        ->join('users', 'tivies.user_id', '=', 'users.id')
+        ->select('tivies.id','tivies.tittle','tivies.img','users.id as user_id','users.name')
+        ->get();    
         return view('pages.showAuthorize',['unauthorizeTivies'=>$unauthorizeTivies,'users'=>$users]);        
     }
 
