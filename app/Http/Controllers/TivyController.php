@@ -182,8 +182,9 @@ class TivyController extends Controller
     {   $users=DB::table('users')
         ->join('role_user','users.id','=','role_user.user_id')
         ->join('roles','role_user.role_id','=','roles.id')
-        ->select('users.*','roles.role',)
+        ->select('users.*','roles.*',)
         ->get(); 
+
         user::all();
         $unauthorizeTivies=DB::table('tivies')->
         join('users', 'tivies.user_id', '=', 'users.id')->
