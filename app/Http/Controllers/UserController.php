@@ -59,7 +59,7 @@ class UserController extends Controller
 
           if ($request->hasFile('img')) {
             // Eliminar imagen si  se va a actualizar
-            $filePath = storage_path('app/public/storage/' . $user->img);
+            $filePath = storage_path('app/public/user/' . $user->img);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
