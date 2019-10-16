@@ -33,12 +33,13 @@
       </div>
       
     </div>
+    <div class="d-none">
+      <input class="" style="" onchange="changeImageProfile(this)" id="image-Profile" name="img" type="file" >
+    </div>
     <div class="row col-12 d-flex justify-content-center px-0 mx-0">
       <button type="submit" class="btn col-5 btn-TivyDarkOrange px-4 rounded-pill">@lang('Edit profile')</button>
     </div>
   </div>
-  <div class="d-none">
-    <input class="" style="" onchange="changeImageProfile(this)" id="image-Profile" name="img" type="file" >
-  </div>
+
 </form>
   

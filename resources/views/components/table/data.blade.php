@@ -2,7 +2,7 @@
     @foreach ($data as $datum)
         @if (strpos($datum, '.jpg') !== false || strpos($datum, '.png') !== false )
             <td> 
-                <img src={{$datum}} alt="" class="" style="height:3em;">
+                <img src="/storage/{{is_null($tivyId) ? 'profile/'.$datum :'tivy/'.$datum}}" alt="" class="" style="height:3em;">
             </td>
         @else
             <td>@lang($datum)</td>
@@ -30,7 +30,6 @@
             <form method="POST" action="{{route('user.editState',$user_id)}}">
                 @csrf
                 @method('PUT')
-                <h1>hola</h1>
                 <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">        
                 <button  name="state" value={{$state===0?2:0}} class="bg-transparent border-0" type="submit">
                 <i class="fas {{$state===0 ? 'fa-user': 'fa-user-slash'}} fa-3x text-muted "></i></button>    

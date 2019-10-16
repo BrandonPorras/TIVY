@@ -51,7 +51,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {              
-  
+    
         $user=User::findOrFail($id); 
       
        
@@ -62,22 +62,20 @@ class UserController extends Controller
         
           if ($request->hasFile('img')) {
             // Eliminar imagen si  se va a actualizar
-            $filePath = storage_path('app/public/user/' . $user->img);
+            $filePath = storage_path('/public/profile/' . $user->imagen);
+
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
             // Subir nueva imagen
-            $file = $request->file('img');
+            $file = $request->img;
             $image_profile = time() . $file->getClientOriginalName();
-            $user->img = $image_profile;
+            $user->imagen = $image_profile;
             $file->storeAs('public/profile', $image_profile);
         }
-
           $user->name=$request->name;
           $user->lastname=$request->lastname;
           $user->description=$request->description;        
-           
-      
           $user->update();   
           return redirect()->route('home');
     }

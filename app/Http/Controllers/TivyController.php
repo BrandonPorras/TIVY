@@ -119,15 +119,11 @@ class TivyController extends Controller
          ]);
 
         $tivy = tivy::findOrFail($id);
-        
-        
-       
-         
              if ($request->hasFile('btn_file')) {
                 // Eliminar imagen si  se va a actualizar
                 
                 $filePath = storage_path('/public/tivy/'. $tivy->img);
-               
+              
                 if (file_exists($filePath)) {
                    
                     unlink($filePath);
