@@ -67,7 +67,7 @@ class UserController extends Controller
                 unlink($filePath);
             }
             // Subir nueva imagen
-            $file = $request->btn_file;
+            $file = $request->file('img');
             $image_profile = time() . $file->getClientOriginalName();
             $user->img = $image_profile;
             $file->storeAs('public/profile', $image_profile);
