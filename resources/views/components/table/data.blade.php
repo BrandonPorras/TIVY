@@ -22,26 +22,19 @@
         <form method="POST" action="{{ route('tivy.allow',$tivyId) }}" >
             @csrf
             @method('PUT')
-            <button id="btn-authorize" type="submit" class="bg-transparent border-0"><i class="fas fa-check-circle fa-3x"></i></button>            
+            <button id="btn-authorize" type="submit" class="bg-transparent border-0"><i class="fas fa-check-circle fa-3x text-success"></i></button>            
         </form>  
     </td>
     @if ($manageUser)
         <td>
-            @if ($state===1)
-                <label for="">
-                    <i class="fas fa-user-slash fa-3x"></i>
-                </label>
-            @else
-                @if ($state===0)
-                    <label for="">
-                        <i class="fas fa-user fa-3x"></i>
-                    </label>
-                @else
-                    <label for="">
-                        <i class="fas fa-user fa-3x"></i>
-                    </label>
-                @endif
-            @endif
+            <form method="POST" action="{{route('user.editState',$user_id)}}">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">        
+                <button  name="state" value={{$state===0?1:0}} class="bg-transparent border-0" type="submit">
+                    <i class="fas {{$state===0 ? 'fa-user': 'fa-user-slash'}} fa-3x text-muted "></i>
+                </button>    
+            </form>
         </td> 
     @endif
 
@@ -49,10 +42,8 @@
         <form method="POST" action="{{ route('tivy.destroy', $tivyId) }}" >
             @csrf
             @method('DELETE')
-
-            <button id="btn-deny"  type="submit" class="bg-transparent border-0"><i class="fas fa-times-circle fa-3x"></i></button>        
+            <button id="btn-deny"  type="submit" class="bg-transparent border-0"><i class="fas fa-times-circle fa-3x text-danger"></i></button>        
         </form>
-
     </td>
 </tr>
 

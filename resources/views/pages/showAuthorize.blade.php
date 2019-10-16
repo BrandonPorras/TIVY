@@ -37,13 +37,13 @@
                             <div class="tab-pane fade" id="list-manageUser" role="tabpanel" aria-labelledby="list-manageUser-list">
                                 @component('components.table.authorize')  
                                     @slot('header')
-                                        @component('components.table.header',['data'=>['username','user description','email','profile photo','role actual','change role','aprove','deactivate','delete']])
+                                        @component('components.table.header',['data'=>['id','username','user description','email','profile photo','role actual','change role','aprove','deactivate','delete']])
                                         @endcomponent
                                     @endslot
                                     @slot('information')
                                         @foreach ($users as $user)
                                             @component('components.table.data',['manageUser'=>true,
-                                            'data'=>[$user->name,$user->description,$user->email,$user->imagen,$user->role_user],
+                                            'data'=>[$user->id,$user->name,$user->description,$user->email,$user->imagen,$user->role_user],
                                             'tivyId'=>3,
                                             'user_id'=>$user->id,
                                             'role_id'=>$user->role_id,
