@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="d-none">
-    <input class="" style="" onchange="changeImageProfile(this)" id="image-Profile" name="btn_file" type="file" >
+    <input class="" style="" onchange="changeImageProfile(this)" id="image-Profile" name="img" type="file" >
   </div>
 </form>
   
