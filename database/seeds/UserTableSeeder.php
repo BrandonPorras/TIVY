@@ -30,9 +30,6 @@ class UserTableSeeder extends Seeder
         $user->state=0;
         $user->save();
         $user->roles()->attach($role_user);
-
-
-
      }
 }
 
