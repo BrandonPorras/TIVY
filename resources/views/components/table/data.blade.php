@@ -16,7 +16,7 @@
 
             <button id="btn-authorize" type="submit" class="bg-transparent border-0"><i class="fas fa-check-circle fa-3x"></i></button>            
         </form>
-
+        c:\xampp\htdocs\TIVY\resources\views\pages\manageUser.blade.php
     </td>
     @if ($manageUser)
         <td>
