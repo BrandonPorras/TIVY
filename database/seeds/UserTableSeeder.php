@@ -19,6 +19,7 @@ class UserTableSeeder extends Seeder
         $user->state=1;
         $user->save();
         $user->roles()->attach($role_admin);
+
         $user = new User();
         $user->name = 'User';
         $user->lastname = 'User';
@@ -26,7 +27,7 @@ class UserTableSeeder extends Seeder
         $user->description = 'Sonreir, bailar, ser Ricardo Milos';
         $user->imagen='/storage/milos.png';
         $user->password = bcrypt('secret');
-        $user->state=1;
+        $user->state=0;
         $user->save();
         $user->roles()->attach($role_user);
 
