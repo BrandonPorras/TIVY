@@ -19,7 +19,7 @@
         </td> 
     @endif
     <td>
-        <form method="POST" action="{{ route('tivy.allow',$tivyId) }}" >
+        <form method="POST" action="{{ route($successRoute,is_null($tivyId) ? $user_id :$tivyId) }}" >
             @csrf
             @method('PUT')
             <button id="btn-authorize" type="submit" class="bg-transparent border-0"><i class="fas fa-check-circle fa-3x text-success"></i></button>            
@@ -32,14 +32,13 @@
                 @method('PUT')
                 <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">        
                 <button  name="state" value={{$state===0?1:0}} class="bg-transparent border-0" type="submit">
-                    <i class="fas {{$state===0 ? 'fa-user': 'fa-user-slash'}} fa-3x text-muted "></i>
-                </button>    
+                <i class="fas {{$state===0 ? 'fa-user': 'fa-user-slash'}} fa-3x text-muted "></i></button>    
             </form>
         </td> 
     @endif
 
     <td>
-        <form method="POST" action="{{ route('tivy.destroy', $tivyId) }}" >
+        <form method="POST" action="{{ route($deleteRoute, is_null($tivyId) ? $user_id :$tivyId) }}" >
             @csrf
             @method('DELETE')
             <button id="btn-deny"  type="submit" class="bg-transparent border-0"><i class="fas fa-times-circle fa-3x text-danger"></i></button>        

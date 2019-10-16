@@ -28,7 +28,12 @@
                                     @endsloT
                                     @slot('information')
                                         @foreach ($unauthorizeTivies as $tivy)
-                                            @component('components.table.data',['manageUser'=>false,'data'=>[$tivy->tittle,$tivy->name,$tivy->img],'tivyId'=>$tivy->id])
+                                            @component('components.table.data',
+                                            ['manageUser'=>false,
+                                            'data'=>[$tivy->tittle,$tivy->name,$tivy->img],
+                                            'successRoute'=>'tivy.allow',
+                                            'deleteRoute'=>'tivy.destroy',
+                                            'tivyId'=>$tivy->id])
                                             @endcomponent
                                         @endforeach
                                     @endslot
@@ -44,7 +49,9 @@
                                         @foreach ($users as $user)
                                             @component('components.table.data',['manageUser'=>true,
                                             'data'=>[$user->id,$user->name,$user->description,$user->email,$user->imagen,$user->role_user],
-                                            'tivyId'=>3,
+                                            'tivyId'=>null,
+                                            'successRoute'=>'tivy.allow',
+                                            'deleteRoute'=>'user.destroy',
                                             'user_id'=>$user->id,
                                             'role_id'=>$user->role_id,
                                             'role'=>$user->role_user,
