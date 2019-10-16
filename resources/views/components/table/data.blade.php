@@ -22,7 +22,7 @@
         <form method="POST" action="{{ route($successRoute,is_null($tivyId) ? $user_id :$tivyId) }}" >
             @csrf
             @method('PUT')
-            <button id="btn-authorize" type="submit" class="bg-transparent border-0"><i class="fas fa-check-circle fa-3x text-success"></i></button>            
+            <button name="state" id="btn-authorize" value=1 type="submit" class="bg-transparent border-0"><i class="fas fa-check-circle fa-3x text-success"></i></button>            
         </form>  
     </td>
     @if ($manageUser)
@@ -30,8 +30,9 @@
             <form method="POST" action="{{route('user.editState',$user_id)}}">
                 @csrf
                 @method('PUT')
+                <h1>hola</h1>
                 <input type="hidden" name="user" id="user" value="{{ Auth::user()->id}}">        
-                <button  name="state" value={{$state===0?1:0}} class="bg-transparent border-0" type="submit">
+                <button  name="state" value={{$state===0?2:0}} class="bg-transparent border-0" type="submit">
                 <i class="fas {{$state===0 ? 'fa-user': 'fa-user-slash'}} fa-3x text-muted "></i></button>    
             </form>
         </td> 

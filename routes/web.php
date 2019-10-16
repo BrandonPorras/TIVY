@@ -44,4 +44,11 @@ Route::put('allow/{id}', 'TivyController@allow')->name('tivy.allow');
 
 Route::put('/editState/{id}', 'UserController@editState')->name('user.editState');
 Route::put('/updateRole/{id}/{name}','UserController@updateRole')->name('user.updateRole');
+Route::put('update/','UserController@updateRole')->name('user.updateRole');
+
 Route::delete('/user/delete/{user}','UserController@destroy')->name('user.destroy');
+
+
+
+
+Route::put('user/{id}','UserController@update')->name('user.update');

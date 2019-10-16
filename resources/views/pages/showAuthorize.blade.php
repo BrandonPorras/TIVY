@@ -50,7 +50,7 @@
                                             @component('components.table.data',['manageUser'=>true,
                                             'data'=>[$user->id,$user->name,$user->description,$user->email,$user->imagen,$user->role_user],
                                             'tivyId'=>null,
-                                            'successRoute'=>'tivy.allow',
+                                            'successRoute'=>'user.editState',
                                             'deleteRoute'=>'user.destroy',
                                             'user_id'=>$user->id,
                                             'role_id'=>$user->role_id,

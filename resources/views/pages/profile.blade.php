@@ -75,15 +75,20 @@
         @endslot
         @slot('content')
             @component('components.form.profile',    
+            
             [
             'name'=>Auth::user()->name,
             'lastname'=>Auth::user()->lastname,
             'description'=>Auth::user()->description,
             'email'=>Auth::user()->email,
             'facebook'=>(Auth::user()->name).' '.Auth::user()->lastname,
-            'activities'=>'activity'
+            'activities'=>'activity',
+            'id'=>Auth::user()->id,
             ])
-                
+                  @slot('method')
+                  @method('PUT')
+              @endslot
+              
             @endcomponent
         @endslot
     @endcomponent
