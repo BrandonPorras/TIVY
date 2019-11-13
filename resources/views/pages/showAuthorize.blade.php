@@ -26,8 +26,9 @@
                                         @component('components.table.header',['data'=>['title','author','image','authorize','deny']])
                                         @endcomponent
                                     @endsloT
+                                   
                                     @slot('information')
-                                        @foreach ($unauthorizeTivies as $tivy)
+                                        @forelse ($unauthorizeTivies as $tivy)
                                             @component('components.table.data',
                                             ['manageUser'=>false,
                                             'data'=>[$tivy->tittle,$tivy->name,$tivy->img],
@@ -37,6 +38,7 @@
                                             @endcomponent
                                         @endforeach
                                     @endslot
+
                                 @endcomponent
                             </div>
                             <div class="tab-pane fade" id="list-manageUser" role="tabpanel" aria-labelledby="list-manageUser-list">

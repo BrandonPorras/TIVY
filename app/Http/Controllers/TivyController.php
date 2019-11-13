@@ -180,9 +180,11 @@ class TivyController extends Controller
         ->join('roles','role_user.role_id','=','roles.id')
         ->select('users.*','roles.id as role_id','roles.name as role_user','roles.description as description_role')
         ->get(); 
+
         $unauthorizeTivies=DB::table('tivies')
         ->join('users', 'tivies.user_id', '=', 'users.id')
         ->select('tivies.id','tivies.tittle','tivies.img','users.id as user_id','users.name')
+        ->where('tivies.state','=',"1")
         ->get();    
         return view('pages.showAuthorize',['unauthorizeTivies'=>$unauthorizeTivies,'users'=>$users]);        
     }
@@ -198,7 +200,7 @@ class TivyController extends Controller
 
         //////
         
-        return view('pages.showAuthorize');  
+        return redirect('/home')->with('success', 'editado');
         /////
    }
     
